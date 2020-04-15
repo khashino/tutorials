@@ -60,3 +60,21 @@ then follow steps
 6- installation summary : Install
 7- installation progress : Finish
 ```
+#### Install Oracle Service Bus
+```
+unzip VXXXX_X.zip
+```
+You must have GUI or run it in -silence mode
+```
+java -jar fmw_12.2.1.4.0_osb.jar
+```
+then follow steps
+```
+1- welcome : nothing
+2- Auto update : skip auto updates
+3- installation location : set oracle home same as infrastructure </app/osb>
+4- installation type : Service Bus
+5- prerequisite check : if passed next
+6- installation summary : Install
+7- installation progress : Finish
+```
