@@ -61,6 +61,9 @@ then follow steps
 7- installation progress : Finish
 ```
 #### Install Oracle Api Catalog
+
+https://docs.oracle.com/middleware/1213/oac/CATIG/install_cluster.htm#CATIG245
+
 ```
 unzip VXXXX_X.zip
 ```
