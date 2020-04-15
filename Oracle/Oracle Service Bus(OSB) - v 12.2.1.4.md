@@ -102,4 +102,7 @@ follow steps
     User Name: sys
     Password: ******
     Role: SYSDBA
-4- 
+4- select component : select Create new prefix and give it a name like "OSB1"
+   then just select "SOA Suite" it will select other automaticly 
+   then next
+5-   
