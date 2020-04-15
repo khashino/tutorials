@@ -14,8 +14,8 @@ Oracle Fusion middleware infrastructure - 12.1.3.0
 Oracle Fusion middleware wls(weblogic server) - 12.1.3.0
 Oracle API Catalog - 12.1.3.0
 ```
-#### download and install oracle java jdk 8
-link : https://www.oracle.com/java/technologies/javase-jdk8-downloads.html
+#### download and install oracle java jdk 7
+link : https://www.oracle.com/java/technologies/javase-jdk7-downloads.html
 install it 
 ```
 rpm -ivh jdk8.rpm
@@ -69,17 +69,32 @@ unzip VXXXX_X.zip
 ```
 You must have GUI or run it in -silence mode
 ```
-java -jar fmw_12.1.3.0.0_oac.jar
+java -jar oer-generic.jar
 ```
 then follow steps
 ```
 1- welcome : nothing
 2- Auto update : skip auto updates
-3- installation location : set oracle home same as infrastructure </app/osb>
-4- installation type : Service Bus
+3- installation location : set oracle home same as infrastructure </app/oac>
+4- installation type : Api catalog
 5- prerequisite check : if passed next
 6- installation summary : Install
 7- installation progress : Finish
+```
+## install patches
+
+if any of oracle app contains patch its nessessary to install
+
+installing patches with OPatch 
+
+OPatch exist in Oracle_home/OPatch
+
+```
+cd $ORACLE_HOME/OPatch
+unzip <Patch>.zip
+cd <Patch>
+cat README.txt
+../opatch apply -oh "ORACLE_HOME"
 ```
 
 ## Configure Domain
@@ -105,8 +120,8 @@ follow steps
     User Name: sys
     Password: ******
     Role: SYSDBA
-4- select component : select Create new prefix and give it a name like "OSB1"
-   then just select "SOA Suite" it will select other automaticly 
+4- select component : select Create new prefix and give it a name like "OAC1"
+   then just select "Oracle Api Catalog" it will select other automaticly 
    then next
 5- schema password : give it a password
 6- customize Variable : Next
@@ -126,15 +141,7 @@ follow steps
 1- Create domain : Create new domain - dont change the path but u can change base_domain to anything
 2- Template : make sure "Create Domain Using Product Templates" is selected
   then select the following templates:
-  (x)Oracle Service Bus - 12.2.1.0 [osb]
-    Selecting this template automatically selects the following as dependencies:
-    WebLogic Advanced Web Services for JAX-RPC Extension
-    ODSI XQuery 2004 Components
-    Oracle Enterprise Manager
-    Oracle WSM Policy Manager
-    Oracle JRF
-    WebLogic Coherence Cluster Extension
-  (x)Insight Service Bus Agent - 12.2.1.0 [osb] if you want to include an Oracle Real-Time Integration Business Insight agentt with Oracle Service Bus.
+  (x)Oracle Api Catalog
 3- Aplication Location : Next
 4- Administrator Acount : name=weblogic pass=XXXX
 5- Domain mode and jdk : next
