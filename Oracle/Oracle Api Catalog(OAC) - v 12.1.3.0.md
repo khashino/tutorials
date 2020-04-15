@@ -18,7 +18,7 @@ Oracle API Catalog - 12.1.3.0
 link : https://www.oracle.com/java/technologies/javase-jdk7-downloads.html
 install it 
 ```
-rpm -ivh jdk8.rpm
+rpm -ivh jdk7.rpm
 ```
 check it
 ```
