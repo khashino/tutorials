@@ -78,3 +78,28 @@ then follow steps
 6- installation summary : Install
 7- installation progress : Finish
 ```
+
+## Configure Domain
+
+Oracle Tutorial : https://docs.oracle.com/middleware/1221/core/INOSB/GUID-36DFF16B-4891-46EB-9554-436A3CCF85BB.htm#INSOA380
+
+#### RCU
+first U must have Database . then run RCU to create repository utilities
+```
+cd $ORACLE_HOME/oracle_common/bin
+./rcu
+```
+follow steps
+```
+1- welcome : next
+2- create repository : check System load and product load
+3- db connection : 
+  For example:
+    Database Type: Oracle Database
+    Name: examplehost.exampledomain.com
+    Port: 1521
+    Service Name: Orcl.exampledomain.com
+    User Name: sys
+    Password: ******
+    Role: SYSDBA
+4- 
