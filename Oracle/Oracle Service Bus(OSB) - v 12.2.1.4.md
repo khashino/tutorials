@@ -105,4 +105,10 @@ follow steps
 4- select component : select Create new prefix and give it a name like "OSB1"
    then just select "SOA Suite" it will select other automaticly 
    then next
-5-   
+5- schema password : give it a password
+6- customize Variable : Next
+7- map tablespace : Next
+8- Summary : Create
+9- complete summary : Close
+```
+
