@@ -111,4 +111,44 @@ follow steps
 8- Summary : Create
 9- complete summary : Close
 ```
+#### config domain
 
+run Config to create domain
+```
+cd $ORACLE_HOME/oracle_common/common/bin
+./config.sh
+```
+follow steps
+```
+1- Create domain : Create new domain - dont change the path but u can change base_domain to anything
+2- Template : make sure "Create Domain Using Product Templates" is selected
+  then select the following templates:
+  (x)Oracle Service Bus - 12.2.1.0 [osb]
+    Selecting this template automatically selects the following as dependencies:
+    WebLogic Advanced Web Services for JAX-RPC Extension
+    ODSI XQuery 2004 Components
+    Oracle Enterprise Manager
+    Oracle WSM Policy Manager
+    Oracle JRF
+    WebLogic Coherence Cluster Extension
+  (x)Insight Service Bus Agent - 12.2.1.0 [osb] if you want to include an Oracle Real-Time Integration Business Insight agentt with Oracle Service Bus.
+3- Aplication Location : Next
+4- Administrator Acount : name=weblogic pass=XXXX
+5- Domain mode and jdk : next
+6- DB connection : connect it to databace that U install RCU - schema owner=<prefix>_STB "OSB1_STB"
+7- Component Datasource : fill then next
+8- JDBC Test : if passed next
+9- next
+10- next
+11- next
+12- finish
+```
+start the server
+```
+cd DOMAIN_HOME/bin
+nohup ./startNodeManager.sh > LOG_DIR/nm.out&
+./startWebLogic.sh
+```
+then open 
+
+http://administration_server_host:administration_server_port/em
