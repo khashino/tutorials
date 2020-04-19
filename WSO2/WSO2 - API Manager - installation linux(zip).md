@@ -9,7 +9,9 @@ check it
 
 java -version
 
-#### download WSO2 api manager zip file
+#### download WSO2 api manager (zip Archive)
+https://wso2.com/api-management/
+
 
 unzip it in the path you want to install it
 ```
