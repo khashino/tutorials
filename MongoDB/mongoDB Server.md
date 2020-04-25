@@ -22,3 +22,9 @@ db.people.find({ firstname: "Nic" })
 db.people.find()
 db.people.find().pretty()
 ```
+
+### Some Features
+(x)-Materialized view
+(x)-sharding
+(x)-Replication
+...
