@@ -152,3 +152,10 @@ hydra -l <user> -L <wordlist> -p <pass> -P <wordliist> <IP> ssh
 #### socialfish
 Educational Phishing Tool & Information Collector
 https://github.com/UndeadSec/SocialFish
+
+#### dirsearch
+brute force directories and files in websites.
+https://github.com/maurosoria/dirsearch
+```
+python3 dirsearch.py -u <URL> -e <EXTENSION>
+```
