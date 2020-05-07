@@ -1,5 +1,20 @@
 # Hack Tools
 
+#### theHarvester
+
+theHarvester is a very simple to use, yet powerful and effective tool designed to be used in the early statges of a
+penetration test or red team engagement. Use it for open source intelligence (OSINT) gathering to help determine a
+company's external threat landscape on the internet.
+
+https://github.com/laramies/theHarvester
+```
+python3 theHarvester.py -d bonyansystem.com -b all -l 500
+theharvester -d microsoft.com -l 500 -b google -h myresults.html
+theharvester -d microsoft.com -b pgp
+theharvester -d microsoft -l 200 -b linkedin
+theharvester -d apple.com -b googleCSE -l 500 -s 300
+```
+
 #### Ngrok
 use if you dont have portforwarding and neet public ip
 
