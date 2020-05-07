@@ -1,5 +1,13 @@
 # Hack Tools
 
+#### whois
+
+whois command
+
+```
+whois test.com
+```
+
 #### theHarvester
 
 theHarvester is a very simple to use, yet powerful and effective tool designed to be used in the early statges of a
