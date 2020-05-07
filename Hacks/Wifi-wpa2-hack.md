@@ -1,4 +1,7 @@
 # Hack Wifi
+## macos
+https://martinsjean256.wordpress.com/2018/02/12/hacking-aircrack-ng-on-mac-cracking-wi-fi-without-kali-in-parallels/
+## kali or ubuntu
 hack wifi (wpa2-wpa) with kali or ubuntu
 #### new terminal 1
 You can change your mac address(Optional)
