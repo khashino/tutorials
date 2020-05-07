@@ -1,5 +1,11 @@
 # Hack Tools
 
+#### Wifite
+
+Python script for auditing wireless networks.(hack)
+
+https://github.com/derv82/wifite2
+
 #### whois
 
 whois command
