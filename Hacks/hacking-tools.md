@@ -1,5 +1,11 @@
 # Hack Tools
 
+#### Unicorn
+
+Magic Unicorn is a simple tool for using a PowerShell downgrade attack and inject shellcode straight into memory
+
+https://github.com/trustedsec/unicorn
+
 #### FakeImageExploiter
 
 https://github.com/r00t-3xp10it/FakeImageExploiter
