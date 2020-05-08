@@ -1,5 +1,11 @@
 # Hack Tools
 
+#### linpeaz
+
+Linux Privilege Escalation Awesome Script
+
+https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
+
 #### steghide
 
 Steghide is a steganography program that is able to hide data in various kinds
