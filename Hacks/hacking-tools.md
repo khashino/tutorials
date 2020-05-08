@@ -8,6 +8,8 @@ https://github.com/sullo/nikto
 
 https://cirt.net/Nikto2
 
+mac : brew install nikto
+
 #### gobuster
 
 Gobuster is a tool used to brute-force:
