@@ -230,6 +230,9 @@ Brute Force
 hydra -l <user> -L <wordlist> -p <pass> -P <wordliist> <IP> ssh
 hydra -l <user> -P <wordliist> <IP> ftp://<IP>
 ```
+https://github.com/vanhauser-thc/thc-hydra
+
+on mac : brew install hydra
 
 #### socialfish
 Educational Phishing Tool & Information Collector
