@@ -1,5 +1,13 @@
 # Hack Tools
 
+#### sqlmap
+
+sqlmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers.
+```
+sqlmap -r inject.sql --technique=U --batch
+```
+https://github.com/sqlmapproject/sqlmap
+
 #### wfuzz
 
 all kind of header and wordlist ... to request
