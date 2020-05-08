@@ -16,6 +16,15 @@ wfuzz -hh <89(show if return more than this Char)> -u http://xxxx/xx.php -H FUZZ
 
 https://github.com/xmendez/wfuzz
 
+some Important Headers:
+```
+X-Forwarded-For: localhost
+X-Real-IP: 12.12.31.12
+X-Forwarded-Host: example.com
+X-Forwarded-Proto: https
+...
+```
+
 #### ippsec
 
 search hacks in videos 
