@@ -1,5 +1,12 @@
 # Hack Tools
 
+#### wfuzz
+
+The Web Fuzzer.
+Wfuzz has been created to facilitate the task in web applications assessments and it is based on a simple concept: it replaces any reference to the FUZZ keyword by the value of a given payload.
+
+https://github.com/xmendez/wfuzz
+
 #### ippsec
 
 search hacks in videos 
