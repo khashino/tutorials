@@ -1,5 +1,30 @@
 # Hack Tools
 
+#### nikto
+
+Nikto web server scanner
+
+https://github.com/sullo/nikto
+
+https://cirt.net/Nikto2
+
+#### gobuster
+
+Gobuster is a tool used to brute-force:
+
+    URIs (directories and files) in web sites.
+    DNS subdomains (with wildcard support).
+    Virtual Host names on target web servers.
+
+https://github.com/OJ/gobuster
+
+#### nmap
+
+port scan and ...
+```
+nmap -vv -sV -sC -oN <output> <IP>
+```
+
 #### Unicorn
 
 Magic Unicorn is a simple tool for using a PowerShell downgrade attack and inject shellcode straight into memory
@@ -203,6 +228,7 @@ sniffglue -vvvv enp0s25
 Brute Force
 ```
 hydra -l <user> -L <wordlist> -p <pass> -P <wordliist> <IP> ssh
+hydra -l <user> -P <wordliist> <IP> ftp://<IP>
 ```
 
 #### socialfish
