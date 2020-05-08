@@ -1,5 +1,12 @@
 # Hack Tools
 
+#### steghide
+
+Steghide is a steganography program that is able to hide data in various kinds
+of image- and audio-files.
+
+https://github.com/StefanoDeVuono/steghide
+
 #### Binwalk
 
 Binwalk is a fast, easy to use tool for analyzing, reverse engineering, and extracting firmware images.
