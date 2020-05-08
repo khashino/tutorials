@@ -1,5 +1,18 @@
 # Hack Tools
 
+#### Binwalk
+
+Binwalk is a fast, easy to use tool for analyzing, reverse engineering, and extracting firmware images.
+
+https://github.com/ReFirmLabs/binwalk
+
+#### strings
+
+check string files
+```
+strings test.jpg
+```
+
 #### nikto
 
 Nikto web server scanner
