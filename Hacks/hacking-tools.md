@@ -3,6 +3,11 @@
 #### exploitdb (searchsploit)
 
 The Exploit Database is an archive of public exploits and corresponding vulnerable software, developed for use by penetration testers and vulnerability researchers.
+
+###### mac install
+```
+brew update && brew install exploitdb
+```
 ```
   searchsploit afd windows local
   searchsploit -t oracle windows
