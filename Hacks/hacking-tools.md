@@ -8,14 +8,15 @@ The Exploit Database is an archive of public exploits and corresponding vulnerab
 ```
 brew update && brew install exploitdb
 ```
+usage : 
 ```
-  searchsploit afd windows local
-  searchsploit -t oracle windows
-  searchsploit -p 39446
-  searchsploit linux kernel 3.2 --exclude="(PoC)|/dos/"
-  searchsploit -s Apache Struts 2.0.0
-  searchsploit linux reverse password
-  searchsploit -j 55555 | json_pp
+searchsploit afd windows local
+searchsploit -t oracle windows
+searchsploit -p 39446
+searchsploit linux kernel 3.2 --exclude="(PoC)|/dos/"
+searchsploit -s Apache Struts 2.0.0
+searchsploit linux reverse password
+searchsploit -j 55555 | json_pp
 ```
 https://github.com/offensive-security/exploitdb
 
