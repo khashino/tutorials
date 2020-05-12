@@ -1,3 +1,22 @@
+#### Speak
+```
+Add-Type -AssemblyName System.speech
+$speak = New-Object System.Speech.Synthesis.SpeechSynthesizer
+$speak.Speak('Hello...')
+```
+```
+$speak.Rate = -10
+$speak.Speak("The current date and time is $(Get-Date)")
+```
+#### Sound
+```
+[System.Console]::Beep()
+[console]::beep(1000,500)
+[system.media.systemsounds]::Beep.play()
+[system.media.systemsounds]::Asterisk.play()
+[system.media.systemsounds]::Exclamation.play()
+[system.media.systemsounds]::Hand.play()
+```
 #### Kill a process
 ```
 get-process BadTh*
@@ -31,6 +50,26 @@ $Credentials = Get-Credential
 $Credentials.Password | ConvertFrom-SecureString | Set-Content C:\test\password.txt
 $Username = $Credentials.Username
 $Password = Get-Content “C:\test\password.txt”
+```
+#### pop up
+```
+Add-Type -AssemblyName PresentationCore,PresentationFramework
+$ButtonType = [System.Windows.MessageBoxButton]::YesNo
+$MessageboxTitle = “Test pop-up message title”
+$Messageboxbody = “Are you sure you want to stop this script execution?”
+$MessageIcon = [System.Windows.MessageBoxImage]::Warning
+[System.Windows.MessageBox]::Show($Messageboxbody,$MessageboxTitle,$ButtonType,$messageicon)
+```
+```
+Add-Type -AssemblyName PresentationCore,PresentationFramework
+$ButtonType = [System.Windows.MessageBoxButton]::YesNoCancel
+$MessageIcon = [System.Windows.MessageBoxImage]::Error
+$MessageBody = "Are you sure you want to delete the log file?"
+$MessageTitle = "Confirm Deletion"
+ 
+$Result = [System.Windows.MessageBox]::Show($MessageBody,$MessageTitle,$ButtonType,$MessageIcon)
+ 
+Write-Host "Your choice is $Result"
 ```
 #### Create Box
 ```
