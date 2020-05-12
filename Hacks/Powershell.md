@@ -170,7 +170,8 @@ $objForm.Add_Shown({ $objForm.Activate() })
  
 [void]$objForm.ShowDialog()
 
-echo $objService_TextBox2
+echo $objService_TextBox1.text 
+echo $objService_TextBox2.text 
 ```
 ```
 [void][Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic')
