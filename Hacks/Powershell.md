@@ -64,7 +64,7 @@ $OKButton.Text = "Login"
  
 #$objServer_TextBox.TabIndex = 2
  
-$OKButton.Add_Click({ echo $objServer_TextBox1.text; echo $objService_TextBox2.text })
+$OKButton.Add_Click({ $objForm.Close() })
  
 $objForm.Controls.Add($OKButton)
  
@@ -73,10 +73,7 @@ $objForm.Add_KeyDown({
         if ($_.KeyCode -eq "Enter")
  
         {
- 
-            echo $objServer_TextBox1.text; 
-            echo $objService_TextBox2.text
- 
+           $objForm.Close()
         }
  
     })
