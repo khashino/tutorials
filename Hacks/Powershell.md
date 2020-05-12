@@ -44,7 +44,7 @@ $objForm = New-Object System.Windows.Forms.Form
  
 $objForm.Text = "Login Again"
  
-$objForm.Size = New-Object System.Drawing.Size(300, 350)
+$objForm.Size = New-Object System.Drawing.Size(300, 250)
  
 $objForm.StartPosition = "CenterScreen"
  
@@ -170,7 +170,7 @@ $objForm.Add_Shown({ $objForm.Activate() })
  
 [void]$objForm.ShowDialog()
 
-echo $objService_TextBox1.text 
+echo $objServer_TextBox1.text 
 echo $objService_TextBox2.text 
 ```
 ```
