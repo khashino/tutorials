@@ -34,55 +34,143 @@ $Password = Get-Content “C:\test\password.txt”
 ```
 #### Create Box
 ```
-Add-Type -AssemblyName System.Windows.Forms
-Add-Type -AssemblyName System.Drawing
+[void][System.Reflection.Assembly]::LoadWithPartialName("System.Drawing")
  
-$Form1 = New-Object System.Windows.Forms.Form
-$Form1.Text = "Data Form"
-$Form1.Size = New-Object System.Drawing.Size(300,200)
-$Form1.StartPosition = "CenterScreen"
-# Icon
-$Form1.Icon = [Drawing.Icon]::ExtractAssociatedIcon((Get-Command powershell).Path)
+[void][System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+ 
+$objForm = New-Object System.Windows.Forms.Form
+ 
+ 
+ 
+$objForm.Text = "Login Again"
+ 
+$objForm.Size = New-Object System.Drawing.Size(300, 250)
+ 
+$objForm.StartPosition = "CenterScreen"
+ 
+ 
+ 
+$objForm.KeyPreview = $True
+ 
+ 
  
 $OKButton = New-Object System.Windows.Forms.Button
-$OKButton.Location = New-Object System.Drawing.Point(75,120)
-$OKButton.Size = New-Object System.Drawing.Size(75,23)
-$OKButton.Text = "OK"
-$OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
-$Form1.AcceptButton = $OKButton
-$Form1.Controls.Add($OKButton)
+ 
+$OKButton.Location = New-Object System.Drawing.Size(75, 250)
+ 
+$OKButton.Size = New-Object System.Drawing.Size(75, 23)
+ 
+$OKButton.Text = "Login"
+ 
+#$objServer_TextBox.TabIndex = 2
+ 
+$OKButton.Add_Click({ $xServerName = $objServer_TextBox1.Text; $xService = $objTextBox2.Text; $objForm.Close() })
+ 
+$objForm.Controls.Add($OKButton)
+ 
+$objForm.Add_KeyDown({
+ 
+        if ($_.KeyCode -eq "Enter")
+ 
+        {
+ 
+            $script:xServerName = $objServer_TextBox1.Text; $xService = $objTextBox2.Text; $objForm.Close()
+ 
+        }
+ 
+    })
+ 
+ 
  
 $CancelButton = New-Object System.Windows.Forms.Button
-$CancelButton.Location = New-Object System.Drawing.Point(150,120)
-$CancelButton.Size = New-Object System.Drawing.Size(75,23)
-$CancelButton.Text = "Cancel"
-$CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
-$Form1.CancelButton = $CancelButton
-$Form1.Controls.Add($CancelButton)
  
-$Label1 = New-Object System.Windows.Forms.Label
-$Label1.Location = New-Object System.Drawing.Point(10,20)
-$Label1.Size = New-Object System.Drawing.Size(280,20)
-$Label1.Text = "Enter data here:"
-$Form1.Controls.Add($Label1)
+$CancelButton.Location = New-Object System.Drawing.Size(150, 250)
  
-$textBox = New-Object System.Windows.Forms.TextBox
-$textBox.Location = New-Object System.Drawing.Point(10,40)
-$textBox.Size = New-Object System.Drawing.Size(260,20)
-$Form1.Controls.Add($textBox)
+$CancelButton.Size = New-Object System.Drawing.Size(75, 23)
  
-$Form1.Topmost = $True
+$CancelButton.Text = "Restart"
  
-$Form1.Add_Shown({$textBox.Select()})
-$result = $Form1.ShowDialog()
+#$objServer_TextBox.TabIndex = 3
  
-if ($result -eq [System.Windows.Forms.DialogResult]::OK)
-{
-$x = $textBox.Text
-$x
+$CancelButton.Add_Click({ $objForm.Close() })
  
-if ($x -eq "") {[System.Windows.Forms.MessageBox]::Show("You didn't enter anything!", "Test Title")}
-else {[System.Windows.Forms.MessageBox]::Show($x, "Test Title")}}
+$objForm.Controls.Add($CancelButton)
+ 
+$objForm.Add_KeyDown({
+ 
+        if ($_.KeyCode -eq "Escape")
+ 
+        { $objForm.Close() }
+ 
+    })
+ 
+ 
+ 
+#This creates a label for the Server_TextBox
+ 
+$objServer_Label = New-Object System.Windows.Forms.Label
+ 
+$objServer_Label.Location = New-Object System.Drawing.Size(10, 20)
+ 
+$objServer_Label.Size = New-Object System.Drawing.Size(280, 20)
+ 
+$objServer_Label.Text = "Username :"
+ 
+$objForm.Controls.Add($objServer_Label)
+ 
+ 
+ 
+#This creates the TextBox1
+ 
+$objServer_TextBox1 = New-Object System.Windows.Forms.TextBox
+ 
+$objServer_TextBox1.Location = New-Object System.Drawing.Size(10, 40)
+ 
+$objServer_TextBox1.Size = New-Object System.Drawing.Size(260, 20)
+ 
+#$objServer_TextBox.TabIndex = 0
+ 
+$objForm.Controls.Add($objServer_TextBox1)
+ 
+ 
+ 
+#This creates a label for the TextBox2
+ 
+$objService_Label2 = New-Object System.Windows.Forms.Label
+ 
+$objService_Label2.Location = New-Object System.Drawing.Size(10, 70)
+ 
+$objService_Label2.Size = New-Object System.Drawing.Size(280, 20)
+ 
+$objService_Label2.Text = "Password :"
+ 
+$objForm.Controls.Add($objService_Label2)
+ 
+ 
+ 
+#This creates the TextBox2
+ 
+$objService_TextBox2 = New-Object System.Windows.Forms.TextBox
+ 
+$objService_TextBox2.Location = New-Object System.Drawing.Size(10, 90)
+ 
+$objService_TextBox2.Size = New-Object System.Drawing.Size(260, 20)
+ 
+#$objService_TextBox2.TabIndex = 1
+ 
+$objForm.Controls.Add($objService_TextBox2)
+ 
+ 
+ 
+$objForm.Topmost = $True
+ 
+ 
+ 
+$objForm.Add_Shown({ $objForm.Activate() })
+ 
+[void]$objForm.ShowDialog()
+
+echo $objService_TextBox2
 ```
 ```
 [void][Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic')
@@ -91,5 +179,12 @@ $title = 'Demographics'
 $msg   = 'Enter your demographics:'
 
 $text = [Microsoft.VisualBasic.Interaction]::InputBox($msg, $title)
+```
+```
+ [void][System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic')
+
+$name = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your name", "Name", "$env:username")
+
+"Your name is $name$"
 ```
 
