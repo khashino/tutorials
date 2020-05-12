@@ -44,7 +44,7 @@ $objForm = New-Object System.Windows.Forms.Form
  
 $objForm.Text = "Login Again"
  
-$objForm.Size = New-Object System.Drawing.Size(300, 250)
+$objForm.Size = New-Object System.Drawing.Size(300, 350)
  
 $objForm.StartPosition = "CenterScreen"
  
@@ -56,7 +56,7 @@ $objForm.KeyPreview = $True
  
 $OKButton = New-Object System.Windows.Forms.Button
  
-$OKButton.Location = New-Object System.Drawing.Size(75, 250)
+$OKButton.Location = New-Object System.Drawing.Size(75, 150)
  
 $OKButton.Size = New-Object System.Drawing.Size(75, 23)
  
@@ -84,7 +84,7 @@ $objForm.Add_KeyDown({
  
 $CancelButton = New-Object System.Windows.Forms.Button
  
-$CancelButton.Location = New-Object System.Drawing.Size(150, 250)
+$CancelButton.Location = New-Object System.Drawing.Size(150, 150)
  
 $CancelButton.Size = New-Object System.Drawing.Size(75, 23)
  
