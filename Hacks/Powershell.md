@@ -64,7 +64,7 @@ $OKButton.Text = "Login"
  
 #$objServer_TextBox.TabIndex = 2
  
-$OKButton.Add_Click({ $xServerName = $objServer_TextBox1.Text; $xService = $objTextBox2.Text; $objForm.Close() })
+$OKButton.Add_Click({ echo $objServer_TextBox1.text; echo $objService_TextBox2.text })
  
 $objForm.Controls.Add($OKButton)
  
@@ -74,8 +74,8 @@ $objForm.Add_KeyDown({
  
         {
  
-            echo $objServer_TextBox1.text 
-            echo $objService_TextBox2.text 
+            echo $objServer_TextBox1.text; 
+            echo $objService_TextBox2.text
  
         }
  
@@ -93,7 +93,8 @@ $CancelButton.Text = "Restart"
  
 #$objServer_TextBox.TabIndex = 3
  
-$CancelButton.Add_Click({ $objForm.Close() })
+#$CancelButton.Add_Click({ $objForm.Close() })
+$CancelButton.Add_Click({ })
  
 $objForm.Controls.Add($CancelButton)
  
