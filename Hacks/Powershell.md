@@ -74,7 +74,8 @@ $objForm.Add_KeyDown({
  
         {
  
-            $script:xServerName = $objServer_TextBox1.Text; $xService = $objTextBox2.Text; $objForm.Close()
+            echo $objServer_TextBox1.text 
+            echo $objService_TextBox2.text 
  
         }
  
@@ -99,8 +100,8 @@ $objForm.Controls.Add($CancelButton)
 $objForm.Add_KeyDown({
  
         if ($_.KeyCode -eq "Escape")
- 
-        { $objForm.Close() }
+        { 
+        }
  
     })
  
