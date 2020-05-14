@@ -124,3 +124,15 @@ done
 
 condition same as if conditions
 ```
+
+### Simple pinger.sh
+
+```
+#/bin/bash
+
+for ip in $(seq 1 255)
+do
+        #echo "test "$1.$ip
+        ping $1.$ip -c 1 | grep 64 | cut -d " " -f 4 | tr -d ":" &
+done
+```
