@@ -124,7 +124,16 @@ scan All port full speed(-A = all detection ,-O = os detection / -T4 = Speed / -
 nmap -T4 -A -p- <IP>
 nmap -T4 -A -p22,80,514,443,111,53 <IP>
 ```
-
+nmap scripts path :
+```
+/usr/share/nmap/scripts
+/usr/local/share/nmap/scripts
+```
+sample use script in nmap:
+```
+nmap -p 443 --script=all
+nmap -p 443 --script=ssl-enum-ciphers <ip/url>
+```
 
 #### Unicorn
 
