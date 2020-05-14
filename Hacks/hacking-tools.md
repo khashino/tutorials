@@ -122,7 +122,9 @@ nmap -T4 <IP>
 scan All port full speed(-A = all detection ,-O = os detection / -T4 = Speed / -p- = all ports  ) take long time
 ```
 nmap -T4 -A -p- <IP>
+nmap -T4 -A -p22,80,514,443,111,53 <IP>
 ```
+
 
 #### Unicorn
 
