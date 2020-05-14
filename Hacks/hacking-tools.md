@@ -107,9 +107,21 @@ https://github.com/OJ/gobuster
 
 #### nmap
 
-port scan and ...
+Fully scan and ...
 ```
 nmap -vv -sV -sC -oN <output> <IP>
+```
+ping-sweep(only see up ip(s))
+```
+nmap -sn 192.168.1.0/24
+```
+very basic scan :| (T4 is (veryfast) speed)
+```
+nmap -T4 <IP>
+```
+scan All port full speed(-A = all / -T4 = Speed / -p- = all ports / -O = os detection )
+```
+nmap -T4 -A -p- <IP>
 ```
 
 #### Unicorn
