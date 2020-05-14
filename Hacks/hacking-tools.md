@@ -119,7 +119,7 @@ very basic scan :| (T4 is (veryfast) speed)
 ```
 nmap -T4 <IP>
 ```
-scan All port full speed(-A = all / -T4 = Speed / -p- = all ports / -O = os detection )
+scan All port full speed(-A = all detection ,-O = os detection / -T4 = Speed / -p- = all ports  ) take long time
 ```
 nmap -T4 -A -p- <IP>
 ```
