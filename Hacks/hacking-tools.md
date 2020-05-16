@@ -1,5 +1,13 @@
 # Hack Tools
 
+#### responder.py
+
+capture smb ... auth
+```
+./Responder.py -I eth0 -wrf
+```
+https://github.com/SpiderLabs/Responder
+
 #### exploitdb (searchsploit)
 
 The Exploit Database is an archive of public exploits and corresponding vulnerable software, developed for use by penetration testers and vulnerability researchers.
