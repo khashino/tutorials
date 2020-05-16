@@ -1,5 +1,10 @@
 # Hack Tools
 
+#### crackmapexec
+https://github.com/byt3bl33d3r/CrackMapExec/wiki/SMB-Command-Reference
+```
+```
+https://github.com/byt3bl33d3r/CrackMapExec
 #### responder.py
 
 capture smb ... auth
