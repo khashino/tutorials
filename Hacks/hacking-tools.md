@@ -20,6 +20,7 @@ capture smb ... auth
 ```
 ./Responder.py -I eth0 -wrf
 ```
+https://github.com/lgandx/Responder
 https://github.com/SpiderLabs/Responder
 
 #### exploitdb (searchsploit)
