@@ -1,5 +1,14 @@
 # Hack Tools
 
+#### tcpdump
+capture packets
+```
+tcpdump -i eth0 -s 0 -v -n -l | egrep -i "POST /|GET /|Host:"
+tcpdump port http or ftp or port smtp or port imap or port pop3 or port telnet -lA | egrep -i -B5 'pass=|pwd=|log=|lo=|login=|user=|username=|pw=|passw=|passwds=|password=|pass:|user:|username:|password:|login:|pass |user '
+```
+https://github.com/the-tcpdump-group/tcpdump
+https://www.tcpdump.org/
+
 #### crackmapexec
 https://github.com/byt3bl33d3r/CrackMapExec/wiki/SMB-Command-Reference
 ```
