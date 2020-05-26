@@ -156,6 +156,7 @@ sample use script in nmap:
 nmap -p 443 --script=all
 nmap -p 443 --script=ssl-enum-ciphers <ip/url>
 ```
+https://github.com/nmap/nmap
 
 #### Unicorn
 
@@ -289,14 +290,6 @@ https://github.com/LionSec/xerosploit
 git clone https://github.com/LionSec/xerosploit
 cd xerosploit && sudo python install.py
 sudo xerosploit
-```
-
-#### nmap
-Important !!! :D
-
-https://github.com/nmap/nmap
-```
-nmap -p <port> <range>
 ```
 
 #### wifijammer
