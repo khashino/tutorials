@@ -134,6 +134,10 @@ Fully scan and ...
 ```
 nmap -vv -sV -sC -oN <output> <IP>
 ```
+Vuln Script
+```
+nmap -sV -vv --script vuln <TARGET_IP>
+```
 ping-sweep(only see up ip(s))
 ```
 nmap -sn 192.168.1.0/24
