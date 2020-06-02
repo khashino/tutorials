@@ -1,5 +1,13 @@
 # Hack Tools
 
+#### hashcat
+```
+brew install hashcat
+```
+use to crack win cred:
+```
+hashcat -m 1000 -a 0 -o winpass2.txt --remove hash ~/Software/Wordlists/rockyou.txt
+```
 #### tcpdump
 capture packets
 ```
