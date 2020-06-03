@@ -118,4 +118,12 @@ done
 
 ```
 
+## 4
+#### func
+```
+myfunc() {
+    echo "hello"
+}
 
+myfunc
+```
