@@ -62,3 +62,60 @@ fi
 
 [ -d file ] => file exist or not
 ```
+math:
+```
+echo $((3+3))
+echo $((6/2))
+echo $((3%2))
+
+if [ $(($[1} % 2)) -eq 0 ]; then
+  echo "even"
+else
+  echo "odd"
+fi
+
+
+
+```
+## 3
+loop
+#### for
+```
+seq 10
+seq 5 10
+
+for i in $(seq 5 10)
+do
+  echo $i
+done  
+
+---------
+
+for i in {1..10}
+do
+  command
+done  
+
+-----
+
+in 1 2 3 4 5 .. N
+in file1 file2 file3
+in $(Linux-Or-Unix-Command-Here)
+in {0..10..2} # {START..END..INCREMENT}
+in {1..5}
+in $(seq 1 2 20)
+
+-----
+
+for (( ; ; ))
+do
+   echo "infinite loops [ hit CTRL+C to stop]"
+done
+
+-----
+
+(( c=1; c<=5; c++ ))
+
+```
+
+
