@@ -6,5 +6,5 @@ export TERM=xterm
 Press (ctrl+Z)
 ```
 stty raw -echo
-fg
+fg #go back to job
 ```
