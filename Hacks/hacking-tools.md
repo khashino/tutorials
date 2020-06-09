@@ -1,5 +1,23 @@
 # Hack Tools
 
+#### tunnel through ssh
+https://github.com/sshuttle/sshuttle
+https://superuser.com/questions/62303/how-can-i-tunnel-all-of-my-network-traffic-through-ssh
+```
+brew install sshuttle
+If you need to have python@3.8 first in your PATH run:
+  echo 'export PATH="/usr/local/opt/python@3.8/bin:$PATH"' >> ~/.zshrc
+
+For compilers to find python@3.8 you may need to set:
+  export LDFLAGS="-L/usr/local/opt/python@3.8/lib"
+
+For pkg-config to find python@3.8 you may need to set:
+  export PKG_CONFIG_PATH="/usr/local/opt/python@3.8/lib/pkgconfig"
+```
+```
+./sshuttle -r username@sshserver 0.0.0.0/0 -vv
+```
+
 #### hashcat
 ```
 brew install hashcat
