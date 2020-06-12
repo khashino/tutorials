@@ -1,5 +1,24 @@
 # Hack Tools
 
+
+#### John The Ripper - om mac
+
+https://github.com/magnumripper/JohnTheRipper
+
+https://gist.github.com/reggi/2faadedd925789a3d25196f2a036ecc6
+```
+brew install openssl
+brew link openssl --force
+
+git clone https://github.com/magnumripper/JohnTheRipper jumbo
+cd jumbo/src
+./configure
+make clean && make -s
+
+pip install bsddb3
+```
+
+
 #### tunnel through ssh
 https://github.com/sshuttle/sshuttle
 https://superuser.com/questions/62303/how-can-i-tunnel-all-of-my-network-traffic-through-ssh
