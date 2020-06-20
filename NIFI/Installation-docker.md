@@ -1,14 +1,24 @@
 # use nifi with ldap (docker)
 
-first
+### first
+
+```
+docker pull osixia/openldap
+```
+then run container
 ```
 docker run -p 389:389 -p 636:636 --name openldap2 --detach osixia/openldap:1.4.0
+```
+check the IP
+```
 docker exec -it openldap2 /bin/bash
   # check container IP
   ip a
 ```
-secound 
-
+### secound 
+```
+docker pull apache/nifi
+```
 fill the IP 
 ```
 docker run --name nifi \
