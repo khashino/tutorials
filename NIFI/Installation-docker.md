@@ -63,30 +63,32 @@ docker pull michalklempa/nifi-registry
 
 ```
 docker run --name nifi-registry \
-      -v /Users/khashayarnorouzi/tmp/cert/localhost:/opt/certs \
-      -p 18443:18443 \
-      -e 'NIFI_REGISTRY_SECURITY_KEYSTORE=/opt/certs/keystore.jks' \
-      -e 'NIFI_REGISTRY_SECURITY_KEYSTOREtYPE=JKS' \
-      -e 'NIFI_REGISTRY_SECURITY_KEYSTOREpASSWD=FyiozSPwniHe633Z+++QvH3HgirK4T9Pe4RILD+aKm4' \
-      -e 'NIFI_REGISTRY_SECURITY_TRUSTSTORE=/opt/certs/truststore.jks' \
-      -e 'NIFI_REGISTRY_SECURITY_TRUSTSTOREtYPE=JKS' \
-      -e 'NIFI_REGISTRY_SECURITY_TRUSTSTOREpASSWD=LtLqii7LMYCpscMOHTGDHyJQABM3jnnbxYm72SQK+aE' \
-      -e 'NIFI_REGISTRY_WEB_HTTP_HOST=' \
-      -e 'NIFI_REGISTRY_WEB_HTTP_PORT=' \
-      -e 'NIFI_REGISTRY_WEB_HTTPS_HOST=0.0.0.0' \
-      -e 'NIFI_REGISTRY_WEB_HTTPS_PORT=18443' \
-      -e 'INITIAL_ADMIN_IDENTITY=cn=admin,dc=example,dc=org' \
-      -e 'NIFI_REGISTRY_SECURITY_IDENTITY_PROVIDER=ldap-identity-provider' \
-      -e 'NIFI_REGISTRY_SECURITY_NEEDcLIENTaUTH=false' \
-      -e 'LDAP_AUTHENTICATION_STRATEGY=SIMPLE' \
-      -e 'LDAP_MANAGER_DN=cn=admin,dc=example,dc=org' \
-      -e 'LDAP_MANAGER_PASSWORD=admin' \
-      -e 'LDAP_USER_SEARCH_BASE=dc=example,dc=org' \
-      -e 'LDAP_USER_SEARCH_FILTER=cn={0}' \
-      -e 'LDAP_IDENTITY_STRATEGY=USE_DN' \
-      -e 'LDAP_URL=ldap://<IP>:389' \
-      -d \
-      michalklempa/nifi-registry:latest
+          --hostname nifi.bonyan.local \
+          -v /root/cert:/opt/certs \
+          -p 18443:18443 \
+          -e NIFI_WEB_HTTP_HOST=nifi.bonyan.local \
+          -e 'NIFI_REGISTRY_SECURITY_KEYSTORE=/opt/certs/keystore.jks' \
+          -e 'NIFI_REGISTRY_SECURITY_KEYSTOREtYPE=JKS' \
+          -e 'NIFI_REGISTRY_SECURITY_KEYSTOREpASSWD=FyiozSPwniHe633Z+++QvH3HgirK4T9Pe4RILD+aKm4' \
+          -e 'NIFI_REGISTRY_SECURITY_TRUSTSTORE=/opt/certs/truststore.jks' \
+          -e 'NIFI_REGISTRY_SECURITY_TRUSTSTOREtYPE=JKS' \
+          -e 'NIFI_REGISTRY_SECURITY_TRUSTSTOREpASSWD=LtLqii7LMYCpscMOHTGDHyJQABM3jnnbxYm72SQK+aE' \
+          -e 'NIFI_REGISTRY_WEB_HTTP_HOST=' \
+          -e 'NIFI_REGISTRY_WEB_HTTP_PORT=' \
+          -e 'NIFI_REGISTRY_WEB_HTTPS_HOST=0.0.0.0' \
+          -e 'NIFI_REGISTRY_WEB_HTTPS_PORT=18443' \
+          -e 'INITIAL_ADMIN_IDENTITY=cn=admin,dc=example,dc=org' \
+          -e 'NIFI_REGISTRY_SECURITY_IDENTITY_PROVIDER=ldap-identity-provider' \
+          -e 'NIFI_REGISTRY_SECURITY_NEEDcLIENTaUTH=false' \
+          -e 'LDAP_AUTHENTICATION_STRATEGY=SIMPLE' \
+          -e 'LDAP_MANAGER_DN=cn=admin,dc=example,dc=org' \
+          -e 'LDAP_MANAGER_PASSWORD=admin' \
+          -e 'LDAP_USER_SEARCH_BASE=dc=example,dc=org' \
+          -e 'LDAP_USER_SEARCH_FILTER=cn={0}' \
+          -e 'LDAP_IDENTITY_STRATEGY=USE_DN' \
+          -e 'LDAP_URL=ldap://<IP>:389' \
+          -d \
+          michalklempa/nifi-registry:latest
 ```
 
 https://localhost:18443/nifi-registry
