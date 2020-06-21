@@ -97,3 +97,6 @@ https://nifi.bonyan.local:18443/nifi-registry
 https://docs.cloudera.com/HDPDocuments/HDF3/HDF-3.1.2/bk_user-guide/content/connecting-to-a-nifi-registry.html#:~:text=To%20connect%20NiFi%20to%20a,provide%20a%20name%20and%20URL.
 
 
+### give permision to user in nifi
+
+So, i've clicked the "manage access policies" item in the right-click menu of the canvas and added my user everywhere, and now I can use the UI.
