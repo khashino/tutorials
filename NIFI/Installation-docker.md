@@ -89,5 +89,6 @@ docker run --name nifi-registry \
       michalklempa/nifi-registry:latest
 ```
 
-http://localhost:18080/nifi-registry
+https://localhost:18443/nifi-registry
+https://nifi.bonyan.local:18443/nifi-registry
 
