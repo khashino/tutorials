@@ -100,3 +100,7 @@ https://docs.cloudera.com/HDPDocuments/HDF3/HDF-3.1.2/bk_user-guide/content/conn
 ### give permision to user in nifi
 
 So, i've clicked the "manage access policies" item in the right-click menu of the canvas and added my user everywhere, and now I can use the UI.
+
+### save and export
+
+https://medium.com/@sh.tsang/docker-tutorial-4-exporting-container-and-saving-image-c3a7d792cfb6
