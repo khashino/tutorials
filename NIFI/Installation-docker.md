@@ -51,5 +51,19 @@ https://localhost:8443/nifi/
 user : admin
 pass : admin
 ```
+### third
+
+https://hub.docker.com/r/michalklempa/nifi-registry
+
+```
+docker pull michalklempa/nifi-registry
+```
+
+```
+    docker run --name nifi-registry \
+      -p 18080:18080 \
+      -d \
+      michalklempa/nifi-registry:latest
+```
 
 
