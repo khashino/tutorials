@@ -66,4 +66,5 @@ docker pull michalklempa/nifi-registry
       michalklempa/nifi-registry:latest
 ```
 
+http://localhost:18080/nifi-registry
 
