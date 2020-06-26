@@ -1,4 +1,23 @@
 # useful linux command
+Getting Data from Web Servers nc
+```
+echo -en "GET / HTTP/1.0\n\n\n" | netcat www.linode.com 80
+```
+Using netcat for Transferring Files
+```
+cat access.log | nc -vv -l -p 4567
+nc -vv localhost 4567 > fileToGet
+```
+nc port scan
+```
+netcat -z -vv -n 127.0.0.1 1-30
+nc -z -v -n 127.0.0.1 1-30
+```
+nc Private chat
+```
+mawk -W interactive '$0="Alice: "$0' | nc -l -p <port_number> <ip_of_alice>
+mawk -W interactive '$0="Bob: "$0' | nc <ip_of_alice> <port_number>
+```
 add text to first of file
 ```
 perl -pi -e 'print "***" if $.==1' file
