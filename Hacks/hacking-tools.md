@@ -1,5 +1,7 @@
 # Hack Tools
 
+#### Just cool chat sv
+https://rosettacode.org/wiki/Chat_server#Python
 
 #### John The Ripper - om mac
 
