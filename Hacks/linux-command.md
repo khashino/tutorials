@@ -1,4 +1,9 @@
 # useful linux command
+
+mount smb on linux
+```
+mount.cifs //192.168.137.20/APPS2/ /apps/mount/APPS2 -o user=khashayar
+```
 Getting Data from Web Servers nc
 ```
 echo -en "GET / HTTP/1.0\n\n\n" | netcat www.linode.com 80
