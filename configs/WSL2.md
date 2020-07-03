@@ -31,3 +31,11 @@ sudo apt install xfce4
 sudo apt install xrdp
 sudo /etc/init.d/xrdp start
 ```
+### port forwarding on wsl2
+
+add new rule in firewall for that port
+
+then:
+```
+ netsh interface portproxy add v4tov4 listenport=3000 listenaddress=0.0.0.0 connectport=3000 connectaddress=172.24.227.202<wsl2 ip>
+```
