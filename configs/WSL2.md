@@ -20,6 +20,11 @@ Install your Linux distribution of choice from microsoft store
 ```
 wsl -l -v
 ```
+#### backup and restore
+```
+wsl --export <>.tar
+wsl --import <>.tar
+```
 ### Use GUI (RDP) for linux on wsl2
 ```
 sudo apt install xfce4
