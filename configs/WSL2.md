@@ -25,9 +25,16 @@ wsl -l -v
 wsl.exe --export <DistributionName> <FileName>.tar
 wsl.exe --import <DistributionName> <InstallLocation> <FileName>.tar
 ```
-use new import one
+#### start
 ```
 wsl --distribution <DistributionName>
+```
+#### terminate
+```
+wsl.exe --list --running
+
+wsl --terminate <DistributionName>
+wsl -t <DistributionName>
 ```
 #### remove
 ```
