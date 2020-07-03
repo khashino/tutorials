@@ -22,8 +22,16 @@ wsl -l -v
 ```
 #### backup and restore
 ```
-wsl --export <>.tar
-wsl --import <>.tar
+wsl.exe --export <DistributionName> <FileName>.tar
+wsl.exe --import <DistributionName> <InstallLocation> <FileName>.tar
+```
+use new import one
+```
+wsl --distribution <DistributionName>
+```
+#### remove
+```
+wsl.exe --unregister <DistributionName>
 ```
 ### Use GUI (RDP) for linux on wsl2
 ```
