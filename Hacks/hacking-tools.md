@@ -50,11 +50,32 @@ hashcat -m 1000 -a 0 -o winpass2.txt --remove hash ~/Software/Wordlists/rockyou.
 #### tcpdump
 capture packets
 ```
+tcpdump -tttt -nn -XX -vvv -s0 -i any -w tet.cap
 tcpdump -i eth0 -s 0 -v -n -l | egrep -i "POST /|GET /|Host:"
 tcpdump port http or ftp or port smtp or port imap or port pop3 or port telnet -lA | egrep -i -B5 'pass=|pwd=|log=|lo=|login=|user=|username=|pw=|passw=|passwds=|password=|pass:|user:|username:|password:|login:|pass |user '
 ```
+```
+-i any : Listen on all interfaces just to see if you’re seeing any traffic.
+-i eth0 : Listen on the eth0 interface.
+-D : Show the list of available interfaces
+-n : Don’t resolve hostnames.
+-nn : Don’t resolve hostnames or port names.
+-q : Be less verbose (more quiet) with your output.
+-t : Give human-readable timestamp output.
+-tttt : Give maximally human-readable timestamp output.
+-X : Show the packet’s contents in both hex and ASCII.
+-XX : Same as -X, but also shows the ethernet header.
+-v, -vv, -vvv : Increase the amount of packet information you get back.
+-c : Only get x number of packets and then stop.
+-s : Define the size of the capture in bytes. Use -s0 to get everything, unless you are intentionally capturing less.
+-S : Print absolute sequence numbers.
+-e : Get the ethernet header as well.
+-q : Show less protocol information.
+-E : Decrypt IPSEC traffic by providing an encryption key.
+```
 https://github.com/the-tcpdump-group/tcpdump
 https://www.tcpdump.org/
+
 
 #### crackmapexec
 https://github.com/byt3bl33d3r/CrackMapExec/wiki/SMB-Command-Reference
