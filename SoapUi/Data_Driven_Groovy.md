@@ -39,6 +39,9 @@ count++
 Cell Field1 = Sheet1.getCell(0, count)
 Cell Field2 = Sheet1.getCell(1, count)
 Cell Field3 = Sheet1.getCell(2, count)
+//date log
+Date latestdate = new Date();
+log.info ( latestdate.format("hh:mm:ss aa", TimeZone.getTimeZone("GMT+4:30")) + ",SendReq," + Field3.getContents())
 
 log.info ("Count is " + count.toString() + " | IMSI : " + Field1.getContents() + " | KI : " + Field2.getContents() + " | MSISDN : " + Field3.getContents())
 WorkBook1.close()
