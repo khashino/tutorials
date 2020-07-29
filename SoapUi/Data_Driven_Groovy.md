@@ -82,3 +82,12 @@ if (Stop=="True")
 else
 	testRunner.gotoStepByName("Groovy Script")
 ```
+### write to file
+```
+File file = new File("C:\\Users\\khashayar\\Desktop\\soap.txt")
+file.write "First line\n"
+file.append("hello\n")
+file << "Second line\n"
+ 
+println file.text
+```
