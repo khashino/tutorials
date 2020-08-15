@@ -9,6 +9,8 @@ load_module modules/ngx_http_js_module.so
 ### Conf sample
 test.conf
 ```
+js_include conf.d/header_logging.js;
+
 server {
     listen       80;
     server_name  localhost;
