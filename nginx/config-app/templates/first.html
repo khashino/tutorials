@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+textarea {
+  width: 100%;
+  height: 600px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 12px;
+  resize: none;
+
+}
+
+  #parent_div_1, #parent_div_2, #parent_div_3{
+    width:600px ;
+    height:100px;
+    #border:1px solid red;
+    margin-right:20px;
+    float:left;
+}
+
+.center {
+  text-align: center;
+  #border: 1px solid green;
+}
+</style>
+</head>
+<body>
+
+<H1>nginx config file</H1>
+<div id='parent_div_1'>
+<form action="" method="POST">
+<!--  <datalist id="filen">
+            <option value="/etc/nginx/nginx.conf" />
+            <option value="/etc/nginx/conf.d/test.conf" />
+        </datalist>
+-->  <textarea name="config">{{nginxconf | safe}}</textarea>
+  <input type="submit">
+</form>
+
+<a href="?status=check" class="">ٰValidate</a>
+<a href="?status=reload" class="">Reload</a>
+</br></br>
+<div class="center">
+  <p>{{log | safe}}</p>
+</div>
+</div>
+<div>
+</br></br>
+<div id='parent_div_2' class="center">
+  <h3>
+    Headers:
+  </h3>
+  {% for para in headers %}
+    <p>{{para}}</p>
+{% endfor %}
+</div>
+</div>
+</body>
+</html>
