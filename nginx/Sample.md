@@ -7,6 +7,7 @@ add this in
 load_module modules/ngx_http_js_module.so
 ```
 ### Conf sample
+test.conf
 ```
 server {
     listen       80;
@@ -67,5 +68,51 @@ server {
     #location ~ /\.ht {
     #    deny  all;
     #}
+}
+```
+### js Sample
+header_logging.js
+```
+function kvHeaders(headers, parent) {
+    var kvpairs = "";
+    for (var h in headers) {
+        kvpairs += " " + parent + "." + h + "=";
+        if ( headers[h].indexOf(" ") == -1 ) {
+		kvpairs += headers[h];
+        } else {
+            kvpairs += "'" + headers[h] + "'";
+        }
+    }
+    return kvpairs;
+}
+
+function kvAccessLog(r) {
+    var log = r.variables.time_iso8601;    // NGINX JavaScript can access all variables
+    log += " client=" + r.remoteAddress;   // Property of request object
+    log += " method=" + r.method;          // "
+    log += " uri=" + r.uri;                // "
+    log += " status=" + r.status;          // Property of response object
+    log += kvHeaders(r.headersIn, "in");  // Send request headers object to function
+    log += kvHeaders(r.headersOut, "out"); // Send response headers object to function
+    //log += " byte:"+r.request_length
+    return log;
+}
+
+
+function test(r) {
+	return 200;
+}
+
+
+function api(r) {
+	var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+             alert(this.responseText);
+         }
+    };
+    xhttp.open("GET", "/status=check", true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send("Your JSON Data Here");
 }
 ```
