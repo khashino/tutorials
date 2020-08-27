@@ -2,4 +2,4 @@
 
 Almost anything :D
 
-For Self Usage
+For personal use
