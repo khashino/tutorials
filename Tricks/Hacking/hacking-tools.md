@@ -1,5 +1,9 @@
 # Hack Tools
 
+#### pwncat by John Hammond
+https://github.com/calebstewart/pwncat
+
+
 #### Just cool chat sv
 https://rosettacode.org/wiki/Chat_server#Python
 
@@ -99,7 +103,7 @@ The Exploit Database is an archive of public exploits and corresponding vulnerab
 ```
 brew update && brew install exploitdb
 ```
-usage : 
+usage :
 ```
 searchsploit afd windows local
 searchsploit -t oracle windows
@@ -127,7 +131,7 @@ The Web Fuzzer.
 Wfuzz has been created to facilitate the task in web applications assessments and it is based on a simple concept: it replaces any reference to the FUZZ keyword by the value of a given payload.
 
 ```
-wfuzz -u http://xxxx/xx.php -H FUZZ:127.0.0.1 -w <wordlist> 
+wfuzz -u http://xxxx/xx.php -H FUZZ:127.0.0.1 -w <wordlist>
 wfuzz -u http://xxxx/xx.php -H FUZZ:127.0.0.1 -w <wordlist> -p 127.0.0.1:8080:HTTP
 wfuzz -u http://xxxx/xx.php -H FUZZ:FUZ2Z -w <wordlist> -w <secoundWordlist>
 wfuzz -hh <89(show if return more than this Char)> -u http://xxxx/xx.php -H FUZZ:FUZ2Z -w <wordlist> -w <secoundWordlist>
@@ -146,7 +150,7 @@ X-Forwarded-Proto: https
 
 #### ippsec
 
-search hacks in videos 
+search hacks in videos
 
 https://ippsec.rocks
 
