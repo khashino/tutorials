@@ -1,0 +1,21 @@
+From: Test Address <your-email_at_domain.com>
+Reply-To: Test Address <your-email_at_domain.com>
+To: libcurl development <curl-library_at_cool.haxx.se>
+Subject: Test Email
+Date: Mon, 09 Jan 2012 10:00:00 +0000
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+Mime-version: 1.0
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii">
+</head>
+<body>
+<p>Hello World</p>
+</body>
+</html>
+
+==================================
+
+curl  --mail-from "info@khashayarn.ir" --mail-rcpt "khashi.norouzi@yahoo.com" --url smtps://mail.khashayarn.ir/:465 --upload-file test.html  --user "info@khashayarn.ir:PASSSSS" -v -k
