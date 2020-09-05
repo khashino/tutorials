@@ -24,9 +24,13 @@ server {
         index  index.html index.htm;
     }
 }
+
+
 ```
+https://www.cloudsavvyit.com/1306/how-to-create-and-use-self-signed-ssl-on-nginx/
 # OR
 use
 
 https://certbot.eff.org/
+
 
