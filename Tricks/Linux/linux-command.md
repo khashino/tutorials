@@ -1,5 +1,9 @@
 # useful linux command
 
+sar -r in MB
+```
+sar -r 1 | awk -v OFS='   ' '{if($3 ~ /^[:0-9:]/) if($1 ~ /^[:0-9:]/) {print $1,$2,$3/1024,$4/1024,$5,$6/1024,$7/1024,$8/1024,$9,$10/1024,$11/1024} if ($3 ~ /^[:a-z:]/) {print $0} if ($1 ~ /^[:A-Z:]/) {print $0}}'
+```
 mount smb on linux
 ```
 mount.cifs //192.168.137.20/APPS2/ /apps/mount/APPS2 -o user=khashayar
