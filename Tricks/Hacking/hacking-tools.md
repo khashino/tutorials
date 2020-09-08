@@ -9,6 +9,9 @@ on attacker use pwncat Johnhammond
 python -m pwncat -lp 4444
 ```
 or only nc
+```
+nc -lnvp 4444
+```
 #### pwncat by John Hammond
 https://github.com/calebstewart/pwncat
 
