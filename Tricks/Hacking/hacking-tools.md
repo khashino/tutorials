@@ -6,6 +6,17 @@ https://github.com/BC-SECURITY/Empire
 ```
 https://github.com/BC-SECURITY/Starkiller
 ```
+1- installing starkiller
+2- installing Empire
+3- setting up starkiller
+  - cd empire
+  - sudo ./empire --rest
+  - cd ..
+  - sudo ./starkiller.AppImage --no-sandbox
+4- login to starkiller
+  - uri: 127.0.0.1:1337
+  - user: empireadmin
+  - pass: password123
 #### nc reverce
 on target
 ```
