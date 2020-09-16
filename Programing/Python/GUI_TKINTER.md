@@ -48,6 +48,6 @@ window.title("Welcome to LikeGeeks app")
 #btn.grid(column=0,row=0)
 
 window.attributes('-fullscreen',True)
-
+window.configure(bg='black')
 window.mainloop()
 ```
