@@ -102,6 +102,9 @@ window.mainloop()
 ```
 ### CLock V2
 ```
+pip install persiantools
+```
+```
 from tkinter import *
 from tkinter import messagebox
 import subprocess
