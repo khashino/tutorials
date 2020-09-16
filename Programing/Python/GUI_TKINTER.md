@@ -51,3 +51,53 @@ window.attributes('-fullscreen',True)
 window.configure(bg='black')
 window.mainloop()
 ```
+#### CLOCK
+```
+from tkinter import *
+from tkinter import messagebox
+import time
+import sys
+
+def tick():
+    global time1
+    # get the current local time from the PC
+    time2 = time.strftime('%H:%M:%S')
+    # if time string has changed, update it
+    if time2 != time1:
+        time1 = time2
+        clock.config(text=time2)
+        # calls itself every 200 milliseconds
+        # to update the time display as needed
+        # could use >200 ms, but display gets jerky
+    clock.after(200, tick)
+
+window = Tk()
+
+time1 = ''
+
+#status = Label(window, text="v1.0", bd=1, relief=SUNKEN, anchor=W)
+#status.grid(row=0, column=0)
+
+clock = Label(window, font=('times', 30, 'bold'), fg='white', bg='black')
+#clock.grid(row=0, column=1)
+clock.config(anchor=CENTER)
+clock.pack()
+
+tick()
+
+window.title("Welcome to LikeGeeks app")
+
+#window.geometry('600x500')
+
+#def clicked():
+#    messagebox.showinfo('Message title', 'Message content')
+#btn = Button(window,text='Click here', command=clicked)
+#btn.grid(column=0,row=0)
+
+window.attributes('-fullscreen',True)
+
+window.configure(bg='black')
+
+window.mainloop()
+```
+
