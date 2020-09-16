@@ -124,6 +124,24 @@ def tick():
 def exit():
     sys.exit()
 
+def webstats():
+    ps = subprocess.Popen("sudo python3 /home/pi/Downloads/WOL_CCTV/button.py", shell=True, stdout=subprocess.PIPE)
+    #stopweb.config(bg="BLUE")
+    statuslab.config(fg="GREEN", text="Start")
+
+def startweb():
+    ps = subprocess.Popen("sudo python3 /home/pi/Downloads/WOL_CCTV/button.py", shell=True, stdout=subprocess.PIPE)
+    #stopweb.config(bg="BLUE")
+    statuslab.config(fg="GREEN", text="Start")
+
+def stopweb():
+    ps = subprocess.Popen("sudo kill -9 $(ps -ef | grep '/usr/bin/python3 /home/pi/Downloads/WOL_CCTV/button.py' | head -n1 | awk '{print $2}')", shell=True, stdout=subprocess.PIPE)
+    ps.wait()
+    output1, errors1 = ps.communicate()
+    #stopweb.config(bg="RED")
+    statuslab.config(fg="RED", text="Stop")
+
+
 def status():
     p1 = subprocess.Popen("/opt/vc/bin/vcgencmd measure_temp", shell=True, stdout=subprocess.PIPE)
     p2 = subprocess.Popen("ifconfig | grep 'inet 192' | awk '{print $2}'", shell=True, stdout=subprocess.PIPE)
@@ -162,8 +180,18 @@ tick()
 fm1 = Frame(window)
 fm1.config(bg="black")
 
-exitbtn = Button(fm1, text="EXIT", command=exit)
+exitbtn = Button(fm1, text="EXIT APP",bg='#0059b3' , command=exit)
 exitbtn.pack( side = TOP)
+
+startweb = Button(fm1, text="Start WB",bg='#0059b3' , command=startweb)
+startweb.pack( side = TOP)
+
+stopweb = Button(fm1, text="Stop WB",bg='#0059b3', command=stopweb)
+stopweb.pack( side = TOP)
+
+statuslab = Label(fm1,font=('times', 14, 'bold'), background="black", fg="WHITE", anchor=W)
+statuslab.pack( side = TOP)
+
 
 fm1.pack(side=RIGHT, expand=YES)
 #######STATUS###########
@@ -195,5 +223,6 @@ window.attributes('-fullscreen',True)
 window.configure(bg='black')
 
 window.mainloop()
+
 
 ```
