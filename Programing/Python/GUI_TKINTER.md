@@ -31,3 +31,23 @@ rad3.grid(column=2, row=0)
 btn.grid(column=3, row=0)
 window.mainloop()
 ```
+```
+from tkinter import *
+
+from tkinter import messagebox
+
+window = Tk()
+
+window.title("Welcome to LikeGeeks app")
+
+#window.geometry('600x500')
+
+#def clicked():
+#    messagebox.showinfo('Message title', 'Message content')
+#btn = Button(window,text='Click here', command=clicked)
+#btn.grid(column=0,row=0)
+
+window.attributes('-fullscreen',True)
+
+window.mainloop()
+```
