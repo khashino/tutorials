@@ -66,8 +66,10 @@ https://www.kali.org/docs/wsl/win-kex/
 ```
 sudo apt update && sudo apt install kali-win-kex
 win-kex --win -s
-```
-best
-```
+kex --win -s
 win-kex --sl -s
+
+
+kex stop
+kex kill
 ```
