@@ -54,3 +54,20 @@ then:
 ```
  netsh interface portproxy add v4tov4 listenport=3000 listenaddress=0.0.0.0 connectport=3000 connectaddress=172.24.227.202<wsl2 ip>
 ```
+
+
+## Use Kex
+graphical interface
+
+https://www.youtube.com/watch?v=bVdgVkox_mQ
+
+https://www.kali.org/docs/wsl/win-kex/
+
+```
+sudo apt update && sudo apt install kali-win-kex
+win-kex --win -s
+```
+best
+```
+win-kex --sl -s
+```
