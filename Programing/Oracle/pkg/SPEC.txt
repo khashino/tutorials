@@ -1,0 +1,23 @@
+CREATE OR REPLACE PACKAGE EDW0.PKG_ETL_UNL_FILES authid definer
+AS
+   PROCEDURE LOAD_ONE_ITEM (p_loadItemID VARCHAR2);
+
+   PROCEDURE CREATE_EXT_TAB;
+
+   PROCEDURE ALTER_EXT_TAB;
+
+   PROCEDURE DROP_EXT_TAB;
+
+   PROCEDURE LOAD_ITEM_CLEANUP (p_loadItemID VARCHAR2);
+
+   PROCEDURE LOAD_FROM_EXT_TAB;
+   
+   PROCEDURE BUILD_INSERT_STMT;
+
+   PROCEDURE UPDATE_STATUS (p_status         VARCHAR2,
+                            p_recordCount    NUMBER,
+                            p_logMessage     varchar2);
+    FUNCTION CLOB_REPLACE (p_clob clob, p_what varchar2, p_with clob) RETURN clob;
+                               
+END PKG_ETL_UNL_FILES;
+/
