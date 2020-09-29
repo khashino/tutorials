@@ -1,11 +1,10 @@
-CREATE OR REPLACE PACKAGE BODY EDW0.PKG_ETL_UNL_FILES
+CREATE OR REPLACE PACKAGE BODY P_TORKANPOUR.PKG_ETL_UNL_FILES
 AS
-   g_extTableName varchar2(64);
-   g_fileType         varchar2(64);
-   g_fileName         varchar2(64);
+   g_extTableName varchar2(256);
+   g_fileType         varchar2(256);
+   g_fileName         varchar2(256);
    g_fileID         number;
    g_insertStmt    clob;
-   g_extTableSchema varchar2(64) default 'ODI_BASELOAD'; 
    PROCEDURE LOAD_ONE_ITEM (p_loadItemID VARCHAR2)
    AS
    BEGIN
@@ -20,9 +19,6 @@ AS
       
       CREATE_EXT_TAB;
       BUILD_INSERT_STMT;
-      
-            
-        
       
       FOR file_row 
           IN (SELECT file_name, id
@@ -47,7 +43,10 @@ AS
          
       END LOOP;
         DBMS_OUTPUT.PUT_LINE('-end load item ' || p_loadItemID);
-      DROP_EXT_TAB;
+        
+        
+       execute immediate 'drop table ' || g_extTableName;
+      
       
     EXCEPTION
           WHEN OTHERS THEN
@@ -77,35 +76,6 @@ EXCEPTION
            DBMS_OUTPUT.PUT_LINE('***error loading from external table');
              
            UPDATE_STATUS ('ERR_INSERT', NULL, SQLERRM);
-   END;
-
-   PROCEDURE DROP_EXT_TAB
-   AS
-      l_stmt   VARCHAR2 (100);
-      l_cnt        number;
-   BEGIN
-      
-      SELECT count(*) INTO l_cnt
-          FROM all_tables
-         WHERE table_name = g_extTableName and OWNER = g_extTableSchema; 
-        IF l_cnt > 0 THEN
-          EXECUTE IMMEDIATE 'drop table ' || g_extTableSchema || '.' || g_extTableName;
-      END IF;         
-
-   EXCEPTION
-      WHEN OTHERS
-      THEN
-         DBMS_OUTPUT.PUT_LINE ('TABLE NOT EXIST!');
-         RAISE;
-   END;
-
-   PROCEDURE LOAD_ITEM_CLEANUP (p_loadItemID VARCHAR2)
-   AS
-   BEGIN
-        UPDATE DWC_LOAD_ITEM
-          SET STATUS = 'CRITICAL_ERROR'
-             WHERE LOAD_ITEM_CD = p_loadItemID;
-        DROP_EXT_TAB;
    END;
 
 
@@ -144,13 +114,12 @@ EXCEPTION
         FROM dwc_str_repos
        WHERE str_id = 'CREATE_EXT_' || upper(g_fileType);
 
-        DROP_EXT_TAB;       
-        g_fileName := g_extTableName; -- just set some filename
-
+     
+      g_fileName := g_extTableName;
       l_stmt := REPLACE (l_stmt, '#UNL_FILE_NAME#', g_fileName);
       l_stmt := REPLACE (l_stmt, '#BAD_FILE#', replace(lower(g_extTableName), '$', ''));
       l_stmt := REPLACE (l_stmt, '#LOG_FILE#', replace(lower(g_extTableName), '$', ''));
-      l_stmt := REPLACE (l_stmt, '#TABLE_NAME#', g_extTableSchema || '.' || g_extTableName);
+      l_stmt := REPLACE (l_stmt, '#TABLE_NAME#', g_extTableName);
         DBMS_OUTPUT.PUT_LINE(l_stmt);
         EXECUTE IMMEDIATE l_stmt;
 
@@ -161,7 +130,6 @@ EXCEPTION
    THEN
        DBMS_OUTPUT.PUT_LINE('***error create external table');
       DBMS_OUTPUT.PUT_LINE(SQLERRM);
-       UPDATE_STATUS ('ERR_EXT_TAB', NULL, SQLERRM);
       RAISE_APPLICATION_ERROR (-20002, 'error creating external table'); 
    END;
    
@@ -170,7 +138,7 @@ EXCEPTION
      l_stmt varchar2(1024);
    BEGIN
        DBMS_OUTPUT.PUT_LINE('altering external table');
-       l_stmt := 'alter table ' || g_extTableSchema || '.' || g_extTableName || ' LOCATION (''' || g_fileName || ''')';
+       l_stmt := 'alter table ' || g_extTableName || ' LOCATION (''' || g_fileName || ''')';
        DBMS_OUTPUT.PUT_LINE(l_stmt);
        execute immediate l_stmt;
    END;                            
@@ -182,25 +150,12 @@ EXCEPTION
       l_len        number;
    BEGIN
         DBMS_OUTPUT.PUT_LINE('part1');
-        select str_val into l_stmt from edw0.dwc_str_repos
-         where str_id = 'DWB_INS_' || upper(g_fileType) || '_2';
+        select str_val into l_stmt from dwc_str_repos
+         where str_id = 'INSERT_STMT2';
          DBMS_OUTPUT.PUT_LINE('part2');
-        select str_val into l_nbrTransStmt from edw0.dwc_str_repos
-         where str_id = 'NBR_TRANS_STMT_2';
-         DBMS_OUTPUT.PUT_LINE('part3');
-        l_stmt := clob_replace(l_stmt, '#EXT_TAB_NAME#', g_extTableSchema || '.' || g_extTableName);
-        DBMS_OUTPUT.PUT_LINE('part4');
-      l_start := DBMS_LOB.INSTR(l_stmt, '#CALLED_NTWK_CD#', 1);
-      DBMS_OUTPUT.PUT_LINE('part5');
-      if l_start > 0 then 
-      l_nbrTransStmt := clob_replace(l_nbrTransStmt, '#NBR#', 'C493');
-          l_len := length('#CALLED_NTWK_CD#');
-          l_stmt := DBMS_LOB.SUBSTR(l_stmt, l_start - 1, 1) || l_nbrTransStmt || DBMS_LOB.SUBSTR(l_stmt, DBMS_LOB.GETLENGTH(l_stmt) - l_start + l_len, l_start + l_len);
-        end if;           
---        insert into dwc_str_repos  values('STMT_', l_stmt);
---      commit;      
-
-DBMS_OUTPUT.PUT_LINE('part6');
+        l_stmt := replace(l_stmt, '#EXT_TAB_NAME#', g_extTableName);
+        
+DBMS_OUTPUT.PUT_LINE('part3');
       g_insertStmt := l_stmt;
                 
    EXCEPTION
@@ -210,31 +165,6 @@ DBMS_OUTPUT.PUT_LINE('part6');
           DBMS_OUTPUT.PUT_LINE('error building insert statement.');
           RAISE_APPLICATION_ERROR (-20004, 'error creating insert statement');                        
    END;
-   
- function CLOB_REPLACE(p_clob clob, p_what varchar2, p_with clob) 
-        return clob as
-    buff_size number;
-   l_return clob default '';
-   buff    clob;
-   pos     number default 1; 
-begin
-    while( pos < DBMS_LOB.GETLENGTH(p_clob) )
-   loop
-       buff_size := 30000;
-      while (DBMS_LOB.SUBSTR(p_clob, 1, pos + buff_size - 1) not in (' ', '(', ')', ',', ''''))
-      loop
-         buff_size := buff_size - 1;
-      end loop;
-      buff := SUBSTR(p_clob, pos, buff_size);
-      
-      buff := replace(buff, p_what, p_with);
-      
-      pos := pos + buff_size; 
-      l_return := l_return || buff;
-   end loop;   
-    
-    return l_return;        
-end;
      
 
 END PKG_ETL_UNL_FILES;
