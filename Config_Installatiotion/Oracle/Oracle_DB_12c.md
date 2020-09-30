@@ -6,6 +6,22 @@ glibc-devel.i686 glibc-devel.x86_64 ksh compat-libstdc++-33 libaio.i686 libaio.x
 libgcc.i686 libgcc.x86_64 libstdc++.i686 libstdc++.x86_64 libstdc++-devel.i686 libstdc++-devel.x86_64 libXi.i686 libXi.x86_64 \
 libXtst.i686 libXtst.x86_64 make.x86_64 sysstat.x86_64
 ```
+download and install oracle java jdk 8
+link : https://www.oracle.com/java/technologies/javase-jdk8-downloads.html install it
+```
+rpm -ivh jdk8.rpm
+```
+check it
+```
+java -version
+```
+set JAVA_HOME,PATH
+```
+export JAVA_HOME="<JDK-PATH>"
+echo $JAVA_HOME
+export PATH="$PATH:<JDK-PATH>"
+exho $PATH
+```
 #### Step 2 - Configure User and System
 ```
 groupadd oinstall
