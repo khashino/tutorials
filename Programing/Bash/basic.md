@@ -125,6 +125,14 @@ done
 condition same as if conditions
 ```
 
+sample reaad from file loop
+```
+while read  line
+do
+  Commands
+done < file.txt
+```
+
 ### Simple pinger.sh
 
 ```
