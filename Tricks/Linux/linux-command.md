@@ -1,5 +1,8 @@
 # useful linux command
-
+diff two directory
+```
+diff <(ls -1a . | grep csv|sed 's/.\{3\}$//') <(ls -1a .| grep dat|sed 's/.\{3\}$//')
+```
 sar -r in MB
 ```
 sar -r 1 | awk -v OFS='   ' '{if($3 ~ /^[:0-9:]/) if($1 ~ /^[:0-9:]/) {print $1,$2,$3/1024,$4/1024,$5,$6/1024,$7/1024,$8/1024,$9,$10/1024,$11/1024} if ($3 ~ /^[:a-z:]/) {print $0} if ($1 ~ /^[:A-Z:]/) {print $0}}'
