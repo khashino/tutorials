@@ -247,7 +247,10 @@ Gobuster is a tool used to brute-force:
     URIs (directories and files) in web sites.
     DNS subdomains (with wildcard support).
     Virtual Host names on target web servers.
-
+    
+```
+gobuster dir -u https://domain -w ~/Software/Wordlists/SecLists-master/Discovery/Web-Content/directory-list-2.3-small.txt
+```
 https://github.com/OJ/gobuster
 
 #### nmap
