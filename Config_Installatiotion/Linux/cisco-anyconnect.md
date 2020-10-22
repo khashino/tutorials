@@ -24,9 +24,12 @@ crl_signing_key
 ```
 ```
 sudo certtool –generate-privkey –outfile ca-key.pem
+certtool --generate-privkey > ca-key.pem
 
 sudo certtool –generate-self-signed –load-privkey ca-key.pem \
 –template ca.tmpl –outfile ca-cert.pem
+
+certtool --generate-self-signed --load-privkey ca-key.pem    --outfile ca-cert.pem
 
 sudo vi server.tmpl
 ```
