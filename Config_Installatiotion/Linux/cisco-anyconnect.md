@@ -24,11 +24,12 @@ crl_signing_key
 ```
 ```
 sudo certtool –generate-privkey –outfile ca-key.pem
+or
 certtool --generate-privkey > ca-key.pem
 
 sudo certtool –generate-self-signed –load-privkey ca-key.pem \
 –template ca.tmpl –outfile ca-cert.pem
-
+or
 certtool --generate-self-signed --load-privkey ca-key.pem    --outfile ca-cert.pem
 
 sudo vi server.tmpl
@@ -45,9 +46,14 @@ tls_www_server
 ```
 sudo certtool –generate-privkey –outfile server-key.pem
 
+
+
 sudo certtool –generate-certificate –load-privkey server-key.pem \
 –load-ca-certificate ca-cert.pem –load-ca-privkey ca-key.pem \
 –template server.tmpl –outfile server-cert.pem
+or
+certtool --generate-certificate --load-privkey server-key.pem    --outfile server-cert.pem --load-ca-certificate ca-cert.pem    --load-ca-privkey ca-key.pem --template server.tmpl
+
 ```
 ### Modify OCServ Configuration File
 
