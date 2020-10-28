@@ -19,3 +19,7 @@ asmdflafna
 fakdsnnwionqo
 safcal
 ```
+ony ir sites
+```
+(https?:\/\/)?(www\.)?[a-z0-9-]+\.(ir)(\.[a-z]{2,3})?
+```
