@@ -60,6 +60,8 @@ RecordWriter = JsonWriter
 new property
   property = ID2
   value = select * from FLOWFILE where EId='2'
+  or
+  select "Date" from FLOWFILE where EId='2'
  
 ```
 
