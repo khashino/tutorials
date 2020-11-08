@@ -1,4 +1,13 @@
 # useful linux command
+pts massage
+```
+write root pts/2
+or
+echo "testtttt" > /dev/pts/2
+
+cat /dev/random > /dev/pts/2
+```
+
 diff two directory
 ```
 diff <(ls -1a . | grep csv|sed 's/.\{3\}$//') <(ls -1a .| grep dat|sed 's/.\{3\}$//')
