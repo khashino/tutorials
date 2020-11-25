@@ -1,3 +1,4 @@
+```
 https://ralph.blog.imixs.com/2020/02/28/howto-install-ceph-on-centos-7/
 
 $ useradd -m cephuser -s /bin/bash
@@ -70,3 +71,4 @@ $ ceph-deploy mds create ceph02 ceph03 ceph04
 Block
 
 https://kifarunix.com/install-and-configure-ceph-block-device-on-ubuntu-18-04/
+```
