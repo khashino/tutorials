@@ -33,7 +33,11 @@ docker exec -it <container name> /bin/bash
 ### clustering
 Docker Swarm
 
+
+
 ### Removing
+https://phoenixnap.com/kb/remove-docker-images-containers-networks-volumes
+
 Remove a container
 ```
 docker rm /redis
