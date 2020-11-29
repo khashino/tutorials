@@ -33,3 +33,40 @@ docker exec -it <container name> /bin/bash
 ### clustering
 Docker Swarm
 
+### Removing
+Remove a container
+```
+docker rm /redis
+```
+Force-remove a running container
+```
+docker rm --force redis
+```
+Remove all stopped containers
+```
+docker rm $(docker ps -a -q)
+```
+Remove a container and its volumes
+```
+docker rm -v redis
+```
+
+### Stop and remove container
+```
+docker container ls -a
+docker container ls –aq 
+docker container stop [container_id]
+docker container rm [container_id]
+```
+```
+docker container stop $(docker container ls –aq)
+docker container rm $(docker container ls –aq)
+```
+### Remove All Docker Containers
+To wipe Docker clean and start from scratch
+```
+docker container stop $(docker container ls –aq) && docker system prune –af ––volumes
+```
+
+
+
