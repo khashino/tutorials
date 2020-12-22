@@ -15,6 +15,8 @@ L >run help
 
 (local) > enum -s -a
 ```
+https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS
+
 
 # pwncat
 
