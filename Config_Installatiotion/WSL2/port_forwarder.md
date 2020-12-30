@@ -1,4 +1,4 @@
-create bat file
+create ps1 file
 ```
 $remoteport = bash.exe -c "ifconfig eth0 | grep 'inet '"
 $found = $remoteport -match '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}';
@@ -37,3 +37,15 @@ for( $i = 0; $i -lt $ports.length; $i++ ){
 
 
 ```
+
+enable script
+```
+Set-ExecutionPolicy RemoteSigned
+```
+after run script
+
+disable script
+```
+Set-ExecutionPolicy Restricted
+```
+
