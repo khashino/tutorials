@@ -21,7 +21,7 @@ set to item
 ```
 <input id='datepicker' style="background-color:black; color:white;" type="text" onclick="Mh1PersianDatePicker.Show(this,'1398/01/21',window.holidays)" placeholder="زمان را انتخاب کنید" />
 ```
-in dynamyc action -> set value > type=javascript
+in dynamyc action > when lose focus -> set value > type=javascript
 ```
 document.getElementById('datepicker').value;
 ```
