@@ -1,0 +1,136 @@
+.datePicker {
+    border none;
+    width 300px;
+    direction rtl;
+    background-color #444;
+    box-shadow 0px 10px 30px rgba(0,0,0,0.3);
+    text-shadow 0 1px 1px rgba(0, 0, 0, 0.1);
+    color #fff;
+    border-radius 10px;
+    font-family Tahoma !important;
+    
+}
+
+    .datePicker button {
+        background none;
+        color #fff;
+    }
+
+    .datePicker tdfirst-child {
+        padding-right 5px;
+    }
+
+.datePickerFriDay, .dateHoliday{
+    color #ff9d00;
+}
+
+.datePickerDay {
+    min-width 35px;
+    min-height 35px;
+    text-align center;
+    cursor pointer;
+}
+
+    .datePickerDayhover {
+        box-shadow 0px 0px 10px rgba(0,0,0,0.3);
+    }
+
+.datePickerDaySelect {
+    text-align center;
+    cursor pointer;
+    background-color #00be8a;
+    color #444;
+    box-shadow 0px 0px 10px rgba(0,0,0,0.3);
+}
+
+.datePickerToday {
+    text-align center;
+    cursor pointer;
+    font-weight bold;
+    color  #444;
+    background-color #fffabe;
+    border-radius  50px;
+}
+
+.datePickerHeader td {
+    padding 5px;
+    text-shadow 0 0 1px #eee;
+    color #fff;
+    border-bottom 1px solid #ccc
+}
+
+.datePickerFooter td {
+    padding-top 5px;
+    border-top 1px solid #ccc
+}
+
+.datePickerHeader button, .datePickerFooter button {
+    border-radius 50%;
+    border none;
+    cursor pointer;
+}
+
+.datePickerHeader button {
+    min-width 30px;
+    min-height 30px;
+    line-height 0;
+    vertical-align middle;
+    border 1px solid #ccc;
+    padding0px
+}
+
+.datePickerFooter button {
+    padding 0px 8px 2px 8px;
+    border 1px solid #ccc;
+    margin 0 0 5px 5px;
+    font-family inherit;
+}
+
+    .datePickerHeader buttonhover, .datePickerFooter buttonhover {
+        box-shadow 0px 0px 10px rgba(0,0,0,0.3);
+    }
+
+.datePickerYear, .datePickerMonth {
+    text-align center;
+    display inline-block;
+    height 17px;
+    vertical-align middle;
+}
+
+.datePickerMonth {
+    width 45%;
+}
+
+.datePickerYear {
+    width 35%;
+}
+
+.mh1-icon-plus, .mh1-icon-minus {
+    font-style normal;
+    opacity .5;
+}
+
+font-size
+
+.datePicker, .datePickerHeader button, .datePickerFooter button {
+    font-size 14px;
+}
+
+.datePickerHeader button {
+    font-size 20px;
+}
+
+font-size
+
+responsive
+
+ @media (max-width 480px) {
+    .datePicker {
+        width 250px
+    }
+     .datePicker,.datePickerMonth {
+        font-size 13px;
+    }
+ }
+
+responsive
