@@ -118,6 +118,14 @@ done
 
 ```
 
+```
+while read line; do
+# reading each line
+echo "Line No. $n : $line"
+n=$((n+1))
+done < $filename
+```
+
 ## 4
 #### func
 ```
