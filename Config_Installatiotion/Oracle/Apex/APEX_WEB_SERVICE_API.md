@@ -88,3 +88,44 @@ BEGIN
  
 END
 ```
+## Ex2
+```
+declare
+    l_clob       CLOB;
+    l_body  clob;
+BEGIN
+    l_body :=to_clob('<soapenv:Envelope
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:urn="urn:smspushinterface">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <urn:SMSSubmitReq>
+            <urn:Sender>
+                <urn:Username>xxx</urn:Username>
+                <urn:Password>xxxxxxx</urn:Password>
+                <urn:Address>xxx</urn:Address>
+                <urn:ID>xxx</urn:ID>
+                <urn:MessageTypeID>SMS</urn:MessageTypeID>
+            </urn:Sender>
+            <urn:Recipient>
+                <urn:Number>xxxxx</urn:Number>
+            </urn:Recipient>
+            <urn:MsgDetails>
+                <urn:MsgType>0</urn:MsgType>
+                <urn:ShortMessage>test</urn:ShortMessage>
+                <urn:MsgPriority>0</urn:MsgPriority>
+            </urn:MsgDetails>
+        </urn:SMSSubmitReq>
+    </soapenv:Body>
+</soapenv:Envelope>');
+ 
+    l_clob := apex_web_service.make_rest_request(
+        p_url => 'http://xxx.xx.xx.xxx:xxx/xxxx/xxxx',
+        p_http_method => 'POST',
+        p_body => l_body
+        );
+
+    display(l_clob);
+ 
+END
+```
