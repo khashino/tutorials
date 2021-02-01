@@ -1,5 +1,5 @@
 
-#MAKE_REST_REQUEST Function
+# MAKE_REST_REQUEST Function
 Use this function to invoke a RESTful style Web service supplying either name value pairs, a character based payload or a binary payload and returning the response in a CLOB.
 
 Syntax
@@ -19,7 +19,7 @@ APEX_WEB_SERVICE.MAKE_REST_REQUEST(
     p_wallet_pwd        IN VARCHAR2 default null ) 
 RETURN CLOB;
 ```
-###Parameters
+### Parameters
 Describes the parameters available in the MAKE_REST_REQUEST function.
 ```
 Parameter	Description
@@ -72,7 +72,7 @@ p_wallet_pwd
 The password to access the wallet.
 ```
 
-##Example
+## Example
 
 The following example calls a RESTful style Web service using the make_rest_request function passing the parameters to the service as name/value pairs. The response from the service is stored in a locally declared CLOB.
 ```
