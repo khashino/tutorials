@@ -109,3 +109,32 @@ WHEN utl_sms_mci.Transient_Error OR utl_sms_mci.Permanent_Error then
 raise_application_error(-20000, 'Unable to send mail', TRUE);
 END;
 ```
+```
+select p.principal,a.ACL,a.host,a.lower_port,a.upper_port,p.privilege,p.is_grant,p.invert,p.start_date,p.end_date from dba_network_acls a join dba_network_acl_privileges p on a.aclid = p.aclid;
+
+BEGIN
+
+  DBMS_NETWORK_ACL_ADMIN.add_privilege (
+    acl          => 'utl_sms_mci.xml', 
+    principal    => 'APEX_200200',
+    is_grant     => TRUE, 
+    privilege    => 'resolve');
+
+  COMMIT;
+
+END;
+
+
+
+BEGIN
+
+  DBMS_NETWORK_ACL_ADMIN.add_privilege (
+    acl          => 'utl_sms_mci.xml', 
+    principal    => 'APEX_200200',
+    is_grant     => TRUE, 
+    privilege    => 'connect');
+
+  COMMIT;
+
+END;
+```
