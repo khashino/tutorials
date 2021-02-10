@@ -13,6 +13,10 @@ docker run \
 ```
 ```
 docker run  -d --name guacamole -p 8080:8080   oznu/guacamole:armhf
+
+docker stop guacamole
+
+docker start guacamole
 ```
 ```
 Address : localhost:8080
