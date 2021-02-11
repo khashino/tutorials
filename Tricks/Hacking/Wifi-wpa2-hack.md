@@ -35,6 +35,8 @@ aireplay-ng -0 <60> -a <BSSID> wlan0mon
 ##########
 ```
 cap2hccapx.bin name.cap name.hccapx
+hashcat.exe -m 2500 capture.hccapx rockyou.txt
+hashcat.exe -m 2500 -a3 capture.hccapx ?d?d?d?d?d?d?d?d
 
 ```
 
