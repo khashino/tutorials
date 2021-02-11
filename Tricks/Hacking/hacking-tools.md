@@ -334,6 +334,16 @@ https://ngrok.com/
 ```
 ngrok -tcp <PORT>
 ```
+#### localtunnel
+Ngrok Alternative
+use if you dont have portforwarding and neet public ip
+
+https://localtunnel.github.io/www/
+```
+npm install -g localtunnel
+lt --port 8000
+```
+
 #### Brutesploit
 use for Brute Forcing , you can brute force instagram and ...
 
