@@ -18,6 +18,9 @@ airmon-ng start wlan0
 look available Wifis
 ```
 airodump wlan0mon
+
+airodump-ng -c channel --bssid MAC -w /root/Desktop/ mon0
+
 ```
 #### new terminal 3
 attack to get handshake in terminal 2
