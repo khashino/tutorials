@@ -343,6 +343,15 @@ https://localtunnel.github.io/www/
 npm install -g localtunnel
 lt --port 8000
 ```
+#### localhost.run
+Ngrok Alternative
+use if you dont have portforwarding and neet public ip
+
+http://localhost.run/docs/
+```
+ssh -R 80:localhost:3000 localhost.run
+```
+
 
 #### Brutesploit
 use for Brute Forcing , you can brute force instagram and ...
