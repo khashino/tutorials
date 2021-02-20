@@ -1,3 +1,37 @@
+# Installation
+
+https://kivy.org/doc/stable/gettingstarted/installation.html
+
+```
+python -m pip install --upgrade pip setuptools wheel virtualenv
+python -m virtualenv kivy_venv
+
+```
+For Windows default CMD, in the command line do:
+```
+kivy_venv\Scripts\activate
+```
+If you are in a bash terminal on Windows, instead do:
+```
+source kivy_venv/Scripts/activate
+```
+If you are in linux, instead do:
+```
+source kivy_venv/bin/activate
+```
+Install Kivy
+```
+python -m pip install kivy[base] kivy_examples --no-binary kivy
+pip install kivy kivy_deps.sdl2
+```
+
+### to EXE
+```
+https://www.youtube.com/watch?v=NEko7jWYKiE&list=RDCMUCFB0dxMudkws1q8w5NJEAmw&start_radio=1&t=562
+```
+
+
+
 Step 1:
 
 Ensure you have the correct files installed etc. (kivy, pip, pyinstaller)
