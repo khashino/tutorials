@@ -1,0 +1,16 @@
+<Screen1>:
+    BoxLayout:
+        Button:
+            text: 'goto login'
+            on_press: root.manager.current = 'screen2'
+        Button:
+            text: 'Quit'
+            on_press: root.test()
+
+
+#--------------------
+
+<Screen2>:
+    FloatLayout:
+        Button:
+            text: "test"
