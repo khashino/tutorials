@@ -1,4 +1,10 @@
 # useful linux command
+
+sync Clock in nodes
+```
+date --set="$(ssh user@host date)"
+```
+
 pts massage
 ```
 write root pts/2
