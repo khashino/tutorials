@@ -113,5 +113,5 @@ nohup ./startNodeManager.sh > LOG_DIR/nm.out&
 cd DOMAIN_HOME/bin
 ./startWebLogic.sh
 
-
 ```
+http://<IP>:7001/console
