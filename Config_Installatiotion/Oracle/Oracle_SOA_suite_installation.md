@@ -60,3 +60,30 @@ then follow steps
 6- installation summary : Install
 7- installation progress : Finish
 ```
+#### Installing SOA
+
+```
+ unzip V983383-01.zip
+java -jar fmw_12.2.1.4.0_soa.jar
+```
+RCU
+```
+cd ORACLE_HOME/oracle_common/bin
+./rcu
+
+---check there stuff :D
+User Messaging Service
+Metadata Services
+WebLogic Services
+Oracle Platform Security Services
+Audit Services
+Audit Services Append
+Audit Services Viewer
+
+```
+
+Configuring the Domain
+```
+ORACLE_HOME/oracle_common/common/bin
+./config.sh
+```
