@@ -86,4 +86,21 @@ Configuring the Domain
 ```
 ORACLE_HOME/oracle_common/common/bin
 ./config.sh
+
+--check
+Oracle SOA Suite Reference Configuration [soa].
+
+--On the Advanced Configuration screen, select:
+Administration Server
+ Required to properly configure the listen address of the Administration Server.
+Node Manager
+ Required to configure Node Manager.
+Topology
+ Required to configure the Oracle SOA Suite Managed Server.
+
+
+--Creating a New Oracle SOA Suite Machine
+
+next next create ...
+
 ```
