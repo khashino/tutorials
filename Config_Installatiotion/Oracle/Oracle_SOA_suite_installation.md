@@ -104,3 +104,14 @@ Topology
 next next create ...
 
 ```
+
+Starting the Servers
+
+```
+nohup ./startNodeManager.sh > LOG_DIR/nm.out&
+
+cd DOMAIN_HOME/bin
+./startWebLogic.sh
+
+
+```
