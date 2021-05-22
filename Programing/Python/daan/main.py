@@ -32,7 +32,7 @@ class AzadDaanAutomation():
 
 
 if __name__ == "__main__":
-    myapp = AzadDaanAutomation("http://azad.daan.ir/","1419511213732","78007625645_Kh")
+    myapp = AzadDaanAutomation("http://azad.daan.ir/","14195112137321111","")
     myapp.setUp()
     myapp.logIn()
 
