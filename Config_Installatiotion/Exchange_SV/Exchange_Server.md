@@ -17,7 +17,7 @@ Install-WindowsFeature Server-Media-Foundation, NET-Framework-45-Features, RPC-o
 .\Setup.exe /Mode:RecoverServer /IAcceptExchangeServerLicenseTerms
 
 .\Setup.exe
-## stuck at 16% ## 
+## Dont panic take alot at 16% ## 
 
 https://localhost/ecp/?ExchClientVer=15
 ```
