@@ -11,10 +11,13 @@ Install-WindowsFeature Server-Media-Foundation, NET-Framework-45-Features, RPC-o
 
 .\Setup.exe /IAcceptExchangeServerLicenseTerms /PrepareSchema
 .\Setup.exe /IAcceptExchangeServerLicenseTerms /PrepareAD /OrganizationName:"Bonyan System"
+.\Setup.exe /IAcceptExchangeServerLicenseTerms /PrepareAllDomains
 .\Setup.exe /IAcceptExchangeServerLicenseTerms /PrepareDomain:"bonyan.local"
 
-.\Setup.exe /IAcceptExchangeServerLicenseTerms /PrepareAllDomains
 .\Setup.exe /Mode:RecoverServer /IAcceptExchangeServerLicenseTerms
+
+.\Setup.exe
+## stuck at 16% ## 
 
 https://localhost/ecp/?ExchClientVer=15
 ```
