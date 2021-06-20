@@ -67,4 +67,6 @@ hashcat manual
 ?u=ABC...Z
 ?s=!#...{}
 ?a=?l?u?d?s
+
+hashcat -m 2500 -a3 --force kh_dongle-01.hccapx 0912711?d?d?d?d
 ```
