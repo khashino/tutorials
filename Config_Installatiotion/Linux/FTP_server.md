@@ -25,3 +25,17 @@ cd /etc/vsftpd/
 nano user_list
 systemctl restart vsftpd.service
 ```
+
+## errors
+503 Permission denied
+```
+vi /etc/vsftpd/vsftpd.conf
+userlist_enable=YES
+userlist_deny=NO
+```
+
+500 OOPS: could not read chroot() list
+```
+#chroot_list_enable=YES
+#chroot_list_file=/etc/vsftpd.chroot_list
+```
